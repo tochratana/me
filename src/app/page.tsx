@@ -1,22 +1,24 @@
-// app/page.tsx
 import React from "react";
 import styles from "./portfolio.module.css";
 import DottedBackground from "@/components/DottedBackground";
+
 const PortfolioPage: React.FC = () => {
   return (
     <DottedBackground
-      backgroundColor="#000000"
-      dotColor="rgba(255, 255, 255, 0.15)"
+      backgroundColor="var(--bg-color, #000000)"
+      dotColor="var(--dot-color, rgba(255, 255, 255, 0.15))"
       dotSize={1.5}
       dotSpacing={30}
       animated={true}
-      animationSpeed={0.1}
+      animationSpeed={0.05}
     >
       <div className={styles.container}>
         <h1 className={styles.title}>Toch Ratana</h1>
 
         <div className={styles.intro}>
-          {"Hey! I'm Anthony Fu, a fanatical open sourceror and design engineer."}
+          {
+            "Hey! I'm Anthony Fu, a fanatical open sourceror and design engineer."
+          }
         </div>
 
         <div className={styles.section}>
@@ -69,7 +71,7 @@ const PortfolioPage: React.FC = () => {
 
           <p>
             I recently <a href="#">moved to 東京</a>, if you are around, please
-            reach out and let's have some coffee or work together.
+            {"reach out and let's have some coffee or work together."}
           </p>
         </div>
 
