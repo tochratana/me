@@ -5,12 +5,12 @@ import { BookOpenText, Camera, Github, Mic, TvMinimalPlay } from "lucide-react";
 
 const Header: React.FC = () => {
   return (
-    <header className="left-0 right-0 z-50">
+    <header className="left-0 right-0 z-50 bg-white dark:bg-black">
       <div className="mx-auto px-6 py-10 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black  text-sm"
+          className="dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black text-sm"
         >
           <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
             <g mask="url(#mask0_634_3)">
@@ -66,13 +66,13 @@ const Header: React.FC = () => {
               className="dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black transition-colors"
               aria-label="Camera"
             >
-            <Camera />
+              <Camera />
             </button>
             <button
               className="dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black transition-colors"
               aria-label="Code"
             >
-            <TvMinimalPlay />
+              <TvMinimalPlay />
             </button>
             <button
               className="dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black transition-colors"
