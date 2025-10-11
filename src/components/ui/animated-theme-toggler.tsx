@@ -20,12 +20,10 @@ export const AnimatedThemeToggler = ({
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // This should match exactly with the script in RootLayout
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-
     const shouldBeDark = savedTheme ? savedTheme === "dark" : prefersDark;
 
     setIsDark(shouldBeDark);
@@ -92,8 +90,18 @@ export const AnimatedThemeToggler = ({
 
   if (!mounted) {
     return (
-      <button className={cn(className)} disabled {...props}>
-        <Moon className="w-4 h-4" />
+      <button
+        className={cn(
+          "flex items-center justify-center w-10 h-10 rounded-full",
+          "transition-colors duration-200",
+          "bg-transparent hover:bg-black/5 dark:hover:bg-white/10",
+          "text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white",
+          className
+        )}
+        disabled
+        {...props}
+      >
+        <Moon className="w-7 h-7" />
       </button>
     );
   }
@@ -103,13 +111,16 @@ export const AnimatedThemeToggler = ({
       ref={buttonRef}
       onClick={toggleTheme}
       className={cn(
-        "dark:text-white/60 dark:hover:text-white text-black/60 hover:text-black transition-colors",
+        "flex items-center justify-center w-10 h-10 rounded-full",
+        "transition-colors duration-200",
+        "bg-transparent hover:bg-black/5 dark:hover:bg-white/10",
+        "text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white",
         className
       )}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       {...props}
     >
-      {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+      {isDark ? <Sun className="w-7 h-7" /> : <Moon className="w-7 h-7" />}
     </button>
   );
 };

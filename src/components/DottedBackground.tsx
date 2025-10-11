@@ -1,27 +1,50 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface DottedBackgroundProps {
   children: React.ReactNode;
-  dotColor?: string;
   dotSize?: number;
   dotSpacing?: number;
-  backgroundColor?: string;
   animated?: boolean;
   animationSpeed?: number;
+  backgroundColor?: string;
+  dotColor?: string;
 }
 
 const DottedBackground: React.FC<DottedBackgroundProps> = ({
   children,
-  dotColor = "rgba(255, 255, 255, 0.15)",
   dotSize = 1,
   dotSpacing = 30,
-  backgroundColor = "#000000",
   animated = true,
   animationSpeed = 0.5,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameId = useRef<number | null>(null);
+  const [isDark, setIsDark] = useState(true);
+
+  // Listen for theme changes
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Theme-aware colors
+  const backgroundColor = isDark ? "#000000" : "#ffffff";
+  const dotColor = isDark ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.15)";
 
   useEffect(() => {
     if (!animated) return;
@@ -35,7 +58,6 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
     let isMounted = true;
     let offset = 0;
 
-    // Set canvas size function
     const setCanvasSize = () => {
       if (canvas) {
         canvas.width = window.innerWidth;
@@ -43,10 +65,8 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
       }
     };
 
-    // Initial canvas size
     setCanvasSize();
 
-    // Draw animated dots
     const drawDots = () => {
       if (!isMounted || !canvas || !ctx) return;
 
@@ -61,10 +81,8 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
             const x = i * dotSpacing - (offset % dotSpacing);
             const y = j * dotSpacing - (offset % dotSpacing);
 
-            // Add subtle wave effect
             const wave = Math.sin((i + j + offset * 0.02) * 0.1) * 2;
 
-            // Vary opacity for depth effect
             const baseOpacity = 0.15;
             const opacityVariation =
               Math.sin((i * 0.5 + j * 0.3 + offset * 0.03) * 0.2) * 0.1;
@@ -73,7 +91,12 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
               Math.min(0.3, baseOpacity + opacityVariation)
             );
 
-            ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+            // Use theme-aware color
+            const r = isDark ? 255 : 0;
+            const g = isDark ? 255 : 0;
+            const b = isDark ? 255 : 0;
+
+            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
             ctx.beginPath();
             ctx.arc(x, y + wave, dotSize, 0, Math.PI * 2);
             ctx.fill();
@@ -91,18 +114,14 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
       }
     };
 
-    // Resize handler
     const handleResize = () => {
       setCanvasSize();
     };
 
-    // Add event listener
     window.addEventListener("resize", handleResize, { passive: true });
 
-    // Start animation
     drawDots();
 
-    // Cleanup
     return () => {
       isMounted = false;
 
@@ -112,9 +131,8 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
 
       window.removeEventListener("resize", handleResize);
     };
-  }, [animated, animationSpeed, dotSize, dotSpacing]);
+  }, [animated, animationSpeed, dotSize, dotSpacing, isDark]);
 
-  // Static background component
   const StaticBackground = () => {
     try {
       return (
@@ -145,9 +163,9 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
         minHeight: "100vh",
         backgroundColor: backgroundColor,
         overflow: "hidden",
+        transition: "background-color 0.3s ease",
       }}
     >
-      {/* Animated canvas for dots */}
       {animated ? (
         <canvas
           ref={canvasRef}
@@ -166,10 +184,19 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
         <StaticBackground />
       )}
 
-      {/* Content */}
       <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
     </div>
   );
 };
 
 export default DottedBackground;
+
+// Usage example:
+// <DottedBackground
+//   dotSize={1.5}
+//   dotSpacing={30}
+//   animated={true}
+//   animationSpeed={0.05}
+// >
+//   {children}
+// </DottedBackground>
