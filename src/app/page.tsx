@@ -15,24 +15,20 @@ const PortfolioPage: React.FC = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Toch Ratana</h1>
 
-        <div className={styles.intro}>
-          {
-            "Hey! I'm Anthony Fu, a fanatical open sourceror and design engineer."
-          }
-        </div>
+        <div className={styles.intro}>{"Hey! I'm Toch Ratana, Student year 2 at SETEC and also I study at ISTAD."}</div>
 
         <div className={styles.section}>
-          <p>
+          {/* <p>
             Working at <a href="#">⛰ NuxtLabs</a> / <a href="#">▲ Vercel</a>
-          </p>
+          </p> */}
 
-          <p>
+          {/* <p>
             Creator of <a href="#">⚡️ Vitest</a> <a href="#">🧑‍🎨 Slidev</a>{" "}
             <a href="#">🦄 VueUse</a> <a href="#">⚡️ UnoCSS</a>{" "}
             <a href="#">🦌 Elk</a> <a href="#">📝 Type Challenges</a>
-          </p>
+          </p> */}
 
-          <p>
+          {/* <p>
             Core team of <a href="#">💚 Vue</a> <a href="#">🌲 Nuxt</a>{" "}
             <a href="#">⚡️ Vite</a>
           </p>
@@ -40,7 +36,7 @@ const PortfolioPage: React.FC = () => {
           <p>
             Maintaining <a href="#">📜 Shiki</a> <a href="#">🦄 Twoslash</a>{" "}
             <a href="#">🔧 ESLint Stylistic</a>
-          </p>
+          </p> */}
         </div>
 
         <div className={styles.section}>
