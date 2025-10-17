@@ -7,7 +7,7 @@ const PortfolioPage: React.FC = () => {
     <DottedBackground
       backgroundColor="var(--bg-color, #000000)"
       dotColor="var(--dot-color, rgba(255, 255, 255, 0.15))"
-      dotSize={1.5}
+      dotSize={0.9}
       dotSpacing={30}
       animated={true}
       animationSpeed={0.05}
@@ -15,59 +15,41 @@ const PortfolioPage: React.FC = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Toch Ratana</h1>
 
-        <div className={styles.intro}>{"Hey! I'm Toch Ratana, Student year 2 at SETEC and also I study at ISTAD."}</div>
-
-        <div className={styles.section}>
-          {/* <p>
-            Working at <a href="#">⛰ NuxtLabs</a> / <a href="#">▲ Vercel</a>
-          </p> */}
-
-          {/* <p>
-            Creator of <a href="#">⚡️ Vitest</a> <a href="#">🧑‍🎨 Slidev</a>{" "}
-            <a href="#">🦄 VueUse</a> <a href="#">⚡️ UnoCSS</a>{" "}
-            <a href="#">🦌 Elk</a> <a href="#">📝 Type Challenges</a>
-          </p> */}
-
-          {/* <p>
-            Core team of <a href="#">💚 Vue</a> <a href="#">🌲 Nuxt</a>{" "}
-            <a href="#">⚡️ Vite</a>
-          </p>
-
-          <p>
-            Maintaining <a href="#">📜 Shiki</a> <a href="#">🦄 Twoslash</a>{" "}
-            <a href="#">🔧 ESLint Stylistic</a>
-          </p> */}
+        <div className={styles.intro}>
+          {"Hey! I'm Toch Ratana, a 2nd-year IT student at SETEC Institute and also studying Full Stack Web Development at ISTAD."}
         </div>
 
         <div className={styles.section}>
           <p>
-            Dreaming up cool ideas and making them come true is where my passion
-            lies. I am enthusiastic about building tools that help myself and
-            others to be more productive and enjoy the process of crafting. You
-            can find my <a href="#">full projects list here</a>.
+            I&apos;m passionate about <strong>web development</strong>, especially
+            frontend with React and Tailwind CSS. I also enjoy exploring backend
+            technologies like <strong>Spring Boot</strong> and <strong>PostgreSQL</strong>.
           </p>
 
           <p>
-            I give <a href="#">talks</a> and write <a href="#">blog posts</a>{" "}
-            about open source, coding, etc. Occasionally, I do live coding
-            streams on <a href="#">YouTube</a> and <a href="#">哔哩哔哩</a>. I
-            am also co-hosting a podcast <a href="#">No Coding Today</a> (in
-            Mandarin), talking about various topics around programming. From
-            time to time, I make some generative-art, interactivity experiments
-            on <a href="#">100.antfu.me</a>.
+            Currently, I’m focusing on improving my skills to become a strong
+            full-stack developer and working toward building my dream project — an{" "}
+            <strong>e-learning platform</strong> to teach coding to beginners 🚀.
+          </p>
+        </div>
+
+        <div className={styles.section}>
+          <p>
+            I love sharing my experiences and knowledge online — from coding tips
+            to daily life as an IT student. You can find my{" "}
+            <a href="#">projects</a> and <a href="#">blogs</a> where I document
+            what I learn along the way.
           </p>
 
           <p>
-            Outside of programming, I enjoy doing photography and traveling. I
-            post <a href="#">photos on this page</a>. I also love anime, movies
-            and dramas, I am trying to list my <a href="#">media consumption</a>
-            . Also, in case you are interested, here are the{" "}
-            <a href="#">hardware/software I use</a>.
+            In my free time, I enjoy going out alone, taking photos, making{" "}
+            <a href="#">YouTube</a> and <a href="#">TikTok</a> videos about my
+            student life, and listening to music 🎧.
           </p>
 
           <p>
-            I recently <a href="#">moved to 東京</a>, if you are around, please
-            {"reach out and let's have some coffee or work together."}
+            My dream is to secure a great job by my third year, keep improving,
+            and inspire others to learn and grow in tech 💪.
           </p>
         </div>
 
@@ -75,46 +57,35 @@ const PortfolioPage: React.FC = () => {
           <p className={styles.sectionTitle}>Find me on</p>
 
           <div className={styles.socialLinks}>
-            <a href="#">GitHub</a>
-            <a href="#">Bluesky</a>
-            <a href="#">Threads</a>
-            <a href="#">Discord Server</a>
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
+            <a href="https://github.com/tochratana" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a href="https://www.youtube.com/@tochratana" target="_blank" rel="noreferrer">
+              YouTube
+            </a>
+            <a href="https://www.instagram.com/toch.ratana" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@tochratana" target="_blank" rel="noreferrer">
+              TikTok
+            </a>
+            <a href="mailto:ratana.toch@camasean.edu.kh">Email</a>
           </div>
-
-          <div className={styles.socialLinks}>
-            <a href="#">哔哩哔哩</a>
-            <a href="#">中文推</a>
-            <a href="#">日本語</a>
-          </div>
-
-          <p className={styles.email}>Or mail me at hi@antfu.me</p>
-
-          <p className={styles.inactive}>
-            ( Inactive on <a href="#">Mastodon</a> <a href="#">Twitter</a>{" "}
-            <a href="#">知乎</a> <a href="#">微博</a> )
-          </p>
         </div>
 
         <div className={styles.sponsorSection}>
           <p>
-            If you enjoy my work and find them useful, consider sponsor me and
-            the ecosystem to help Open Source sustainable. Thank you!
+            If you enjoy my work or find my content inspiring, feel free to
+            support or collaborate with me. Let’s learn and build something
+            amazing together 🌟
           </p>
 
           <div className={styles.sponsorButtons}>
             <a href="#" className={styles.sponsorBtn}>
-              Sponsor the Ecosystem
+              Let’s Collaborate
             </a>
             <a href="#" className={`${styles.sponsorBtn} ${styles.secondary}`}>
-              How does this work?
-            </a>
-            <a href="#" className={`${styles.sponsorBtn} ${styles.secondary}`}>
-              Sponsor to support Anthony
-            </a>
-            <a href="#" className={`${styles.sponsorBtn} ${styles.secondary}`}>
-              在爱发电上支持我
+              View My Projects
             </a>
           </div>
         </div>
