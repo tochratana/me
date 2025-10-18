@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image"; // ✅ for optimized image loading
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("story");
@@ -26,7 +27,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 px-4 bg-background text-foreground">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -36,75 +37,75 @@ export default function About() {
           </p>
         </div>
 
-        {/* Main Content Grid */}
+        {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Profile Card */}
           <div className="lg:col-span-1">
-            <div className="bg-card border border-border rounded-2xl p-8 sticky top-8">
-              <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
-                👨‍💻
+            <div className="bg-card border border-border rounded-2xl p-8 sticky top-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="relative w-40 h-40 mx-auto mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl"></div>
+                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src="/project/me.JPG"
+                    alt="Toch Ratana"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-center mb-2">John Doe</h3>
+
+              <h3 className="text-2xl font-bold text-center mb-2">
+                Toch Ratana
+              </h3>
               <p className="text-muted-foreground text-center mb-6">
                 Full-Stack Developer
               </p>
+
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-xl">📍</span>
                   <span className="text-muted-foreground">
-                    San Francisco, CA
+                    Phnom Penh, Cambodia
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-xl">🎓</span>
                   <span className="text-muted-foreground">
-                    Computer Science
+                    Information Technology (Web Dev Focus)
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <span className="text-xl">💼</span>
                   <span className="text-muted-foreground">
-                    3+ Years Experience
+                    2+ Years Experience
                   </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Content Area */}
+          {/* Content Tabs */}
           <div className="lg:col-span-2">
-            {/* Tab Navigation */}
+            {/* Tab Buttons */}
             <div className="flex gap-2 mb-8 border-b border-border">
-              <button
-                onClick={() => setActiveTab("story")}
-                className={`px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === "story"
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                My Story
-              </button>
-              <button
-                onClick={() => setActiveTab("interests")}
-                className={`px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === "interests"
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Interests
-              </button>
-              <button
-                onClick={() => setActiveTab("values")}
-                className={`px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === "values"
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                Values
-              </button>
+              {["story", "interests", "values"].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
+                    activeTab === tab
+                      ? "border-primary text-primary"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {tab === "story"
+                    ? "My Story"
+                    : tab === "interests"
+                    ? "Interests"
+                    : "Values"}
+                </button>
+              ))}
             </div>
 
             {/* Tab Content */}
@@ -112,29 +113,28 @@ export default function About() {
               {activeTab === "story" && (
                 <div className="space-y-6 animate-fadeIn">
                   <p className="text-lg leading-relaxed">
-                    Hello! I&apos;m a passionate full-stack developer with a
-                    love for creating elegant solutions to complex problems. My
-                    journey in tech started during college when I built my first
-                    web application, and I&apos;ve been hooked ever since.
+                    Hello! I&apos;m <b>Toch Ratana</b>, a passionate full-stack
+                    developer who loves creating elegant, impactful digital
+                    experiences. My journey began with curiosity about how
+                    technology shapes our world, and that curiosity grew into a
+                    lifelong passion for coding.
                   </p>
                   <p className="text-lg leading-relaxed text-muted-foreground">
-                    Over the years, I&apos;ve worked on diverse projects ranging
-                    from e-commerce platforms to real-time data visualization
-                    tools. I believe in writing clean, maintainable code and
-                    creating user experiences that delight.
+                    I enjoy transforming ideas into real, functional projects —
+                    from e-learning platforms to e-commerce sites. My focus is
+                    on writing clean, scalable code and crafting smooth user
+                    experiences that inspire people.
                   </p>
                   <p className="text-lg leading-relaxed text-muted-foreground">
-                    When I&apos;m not coding, you&apos;ll find me exploring new
-                    technologies, contributing to open-source projects, or
-                    sharing knowledge with the developer community through blog
-                    posts and tutorials.
+                    Beyond coding, I enjoy sharing knowledge through social
+                    media, making videos about my developer journey, and helping
+                    others grow in tech. ✨
                   </p>
                   <div className="bg-secondary border border-border rounded-xl p-6 mt-8">
                     <h4 className="font-bold text-lg mb-2">Fun Fact</h4>
                     <p className="text-muted-foreground">
-                      I&apos;ve contributed to over 50 open-source projects and
-                      love helping others learn to code. Community is what makes
-                      tech amazing! 🚀
+                      I once built a full e-commerce site solo — from UI to
+                      backend API — just for fun and learning 🚀
                     </p>
                   </div>
                 </div>
@@ -189,7 +189,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* CTA Section */}
         <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Let&apos;s Work Together</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -201,6 +201,7 @@ export default function About() {
           </button>
         </div>
 
+        {/* Fade In Animation */}
         <style jsx>{`
           @keyframes fadeIn {
             from {
