@@ -116,12 +116,32 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+/* Custom animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
