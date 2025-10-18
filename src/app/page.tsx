@@ -1,10 +1,11 @@
 "use client";
 
+import About from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Project";
-import {Skills} from "@/components/sections/Skills";
+import Skills from "@/components/sections/Skills";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <ThemeToggle />
       <Hero />
       <Skills />
+      <About />
       <Projects />
       <Contact />
       <Footer />

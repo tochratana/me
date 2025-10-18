@@ -30,7 +30,7 @@ export default function Hero() {
       />
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Left side - Text content */}
+        {/* TODO Left side - Text content */}
         <div
           className={`transition-all duration-1000 ${
             isVisible
@@ -82,7 +82,7 @@ export default function Hero() {
           </div>
 
           {/* Social links */}
-          <div className="flex gap-4 mt-8">
+          {/* <div className="flex gap-4 mt-8">
             <a
               href="#"
               className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
@@ -101,7 +101,7 @@ export default function Hero() {
             >
               <span className="text-xl">🔗</span>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Right side - Code/Tech showcase */}
@@ -129,21 +129,23 @@ export default function Hero() {
               <div className="p-6 font-mono text-sm">
                 <div className="space-y-2">
                   <div className="text-muted-foreground">
-                    <span className="text-accent">const</span>{" "}
+                    <span className="text-orange-500">const</span>{" "}
                     <span className="text-primary">developer</span> = {"{"}
                   </div>
                   <div className="pl-4 text-muted-foreground">
                     name:{" "}
-                    <span className="text-green-500">&quot;John Doe&quot;</span>
+                    <span className="text-green-500">
+                      &quot;Toch Ratana&quot;
+                    </span>
                     ,
                   </div>
-                  <div className="pl-4 text-muted-foreground">skills: [</div>
+                  <div className="pl-4 text-muted-foreground">Role: [</div>
                   <div className="pl-8 text-green-500">
-                    &quot;React&quot;, &quot;TypeScript&quot;,
+                    Full Stack Developer;,
                   </div>
-                  <div className="pl-8 text-green-500">
-                    &quot;Node.js&quot;, &quot;UI/UX&quot;
-                  </div>
+                  <div className="pl-8 text-green-500">Frontend Developer;</div>
+                  <div className="pl-8 text-green-500">Backend Developer;</div>
+                  <div className="pl-8 text-green-500">Junior Developer</div>
                   <div className="pl-4 text-muted-foreground">],</div>
                   <div className="pl-4 text-muted-foreground">
                     passion:{" "}

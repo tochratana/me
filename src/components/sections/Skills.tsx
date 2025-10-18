@@ -1,77 +1,105 @@
-"use client";
-
 import { useState } from "react";
 
-interface Skill {
-  name: string;
-  level: number;
-  icon: string;
-  category: string;
-}
+const skillsData = {
+  Frontend: [
+    { name: "Next.js", icon: "⬢" },
+    { name: "React", icon: "⚛️" },
+    { name: "TypeScript", icon: "TS" },
+    { name: "JavaScript", icon: "JS" },
+    { name: "Tailwind CSS", icon: "🎨" },
+    { name: "CSS3", icon: "🎭" },
+    { name: "HTML5", icon: "📄" },
+  ],
+  Backend: [
+    { name: "Express.js", icon: "⚡" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "Spring Boot", icon: "🍃" },
+    { name: "Java", icon: "☕" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "Python", icon: "🐍" },
+  ],
+  Databases: [
+    { name: "MongoDB", icon: "🍃" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MySQL", icon: "🐬" },
+    { name: "SQLite", icon: "📊" },
+  ],
+  "Tools & DevOps": [
+    { name: "Google Cloud", icon: "☁️" },
+    { name: "GitHub Actions", icon: "⚙️" },
+    { name: "Docker", icon: "🐳" },
+    { name: "Git", icon: "📌" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "VS Code", icon: "💻" },
+    { name: "IntelliJ IDEA", icon: "💡" },
+  ],
+};
 
-const skills: Skill[] = [
-  { name: "React", level: 90, icon: "⚛️", category: "Frontend" },
-  { name: "TypeScript", level: 85, icon: "📘", category: "Frontend" },
-  { name: "Next.js", level: 88, icon: "▲", category: "Frontend" },
-  { name: "Tailwind CSS", level: 92, icon: "🎨", category: "Frontend" },
-  { name: "Node.js", level: 80, icon: "🟢", category: "Backend" },
-  { name: "PostgreSQL", level: 75, icon: "🐘", category: "Backend" },
-  { name: "MongoDB", level: 78, icon: "🍃", category: "Backend" },
-  { name: "Docker", level: 70, icon: "🐳", category: "DevOps" },
+const learningSkills = [
+  { name: "Google Cloud", icon: "☁️" },
+  { name: "Docker", icon: "🐳" },
+  { name: "GitHub Actions", icon: "⚙️" },
 ];
 
-export function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+export default function Skills() {
+  const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Skills & Expertise
+            Skills & Technologies
           </h2>
           <p className="text-muted-foreground text-lg">
-            Technologies I work with to bring ideas to life
+            Technologies and tools I've learned and used in my projects and
+            studies.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="relative group"
-              onMouseEnter={() => setHoveredSkill(skill.name)}
-              onMouseLeave={() => setHoveredSkill(null)}
-            >
-              <div
-                className={`p-6 rounded-xl bg-card border border-border transition-all duration-300 ${
-                  hoveredSkill === skill.name
-                    ? "scale-101 shadow-2xl border-primary"
-                    : "hover:shadow-lg"
-                }`}
-              >
-                <div className="text-4xl mb-4">{skill.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{skill.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {skill.category}
-                </p>
-
-                {/* Progress bar */}
-                <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {Object.entries(skillsData).map(([category, skills]) => (
+            <div key={category}>
+              <h3 className="text-2xl font-bold mb-6">{category}</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {skills.map((skill) => (
                   <div
-                    className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-1000 ease-out"
-                    style={{
-                      width:
-                        hoveredSkill === skill.name ? `${skill.level}%` : "0%",
-                    }}
-                  />
-                </div>
-                <p className="text-sm text-muted-foreground mt-2 text-right">
-                  {skill.level}%
-                </p>
+                    key={skill.name}
+                    className={`flex items-center gap-3 p-4 bg-card border border-border rounded-lg transition-all duration-200 cursor-pointer ${
+                      hoveredSkill === skill.name
+                        ? "border-primary shadow-md"
+                        : "hover:border-primary/50 hover:shadow-sm"
+                    }`}
+                    onMouseEnter={() => setHoveredSkill(skill.name)}
+                    onMouseLeave={() => setHoveredSkill(null)}
+                  >
+                    <span className="text-3xl">{skill.icon}</span>
+                    <span className="font-medium">{skill.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Currently Learning Section */}
+        <div className="text-center border-t border-border pt-12">
+          <p className="text-muted-foreground mb-6 text-lg">
+            Currently learning and expanding my skills in:
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {learningSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary hover:shadow-md transition-all duration-200 cursor-pointer"
+              >
+                <span className="text-2xl">{skill.icon}</span>
+                <span className="font-medium">{skill.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
