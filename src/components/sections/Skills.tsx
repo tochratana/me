@@ -1,44 +1,61 @@
 import { useState } from "react";
+import {
+  Hexagon,
+  Code,
+  Braces,
+  Database,
+  Cloud,
+  Github,
+  GitBranch,
+  Container,
+  Terminal,
+  Coffee,
+  Leaf,
+  Palette,
+  Globe,
+  Layers,
+  Cpu,
+} from "lucide-react";
 
 const skillsData = {
   Frontend: [
-    { name: "Next.js", icon: "⬢" },
-    { name: "React", icon: "⚛️" },
-    { name: "TypeScript", icon: "TS" },
-    { name: "JavaScript", icon: "JS" },
-    { name: "Tailwind CSS", icon: "🎨" },
-    { name: "CSS3", icon: "🎭" },
-    { name: "HTML5", icon: "📄" },
+    { name: "Next.js", icon: <Hexagon size={26} /> },
+    { name: "React", icon: <Code size={26} /> },
+    { name: "TypeScript", icon: <Braces size={26} /> },
+    { name: "JavaScript", icon: <Braces size={26} /> },
+    { name: "Tailwind CSS", icon: <Palette size={26} /> },
+    { name: "CSS3", icon: <Layers size={26} /> },
+    { name: "HTML5", icon: <Globe size={26} /> },
   ],
   Backend: [
-    { name: "Express.js", icon: "⚡" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Spring Boot", icon: "🍃" },
-    { name: "Java", icon: "☕" },
-    { name: "FastAPI", icon: "⚡" },
-    { name: "Python", icon: "🐍" },
+    { name: "Express.js", icon: <Terminal size={26} /> },
+    { name: "Node.js", icon: <Cpu size={26} /> },
+    { name: "Spring Boot", icon: <Leaf size={26} /> },
+    { name: "Java", icon: <Coffee size={26} /> },
+    { name: "FastAPI", icon: <Terminal size={26} /> },
+    { name: "Python", icon: <Braces size={26} /> },
   ],
   Databases: [
-    { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "MySQL", icon: "🐬" },
-    { name: "SQLite", icon: "📊" },
+    { name: "MongoDB", icon: <Database size={26} /> },
+    { name: "PostgreSQL", icon: <Database size={26} /> },
+    { name: "MySQL", icon: <Database size={26} /> },
+    { name: "SQLite", icon: <Database size={26} /> },
   ],
   "Tools & DevOps": [
-    { name: "Google Cloud", icon: "☁️" },
-    { name: "GitHub Actions", icon: "⚙️" },
-    { name: "Docker", icon: "🐳" },
-    { name: "Git", icon: "📌" },
-    { name: "GitHub", icon: "🐙" },
-    { name: "VS Code", icon: "💻" },
-    { name: "IntelliJ IDEA", icon: "💡" },
+    { name: "Google Cloud", icon: <Cloud size={26} /> },
+    { name: "GitHub Actions", icon: <GitBranch size={26} /> },
+    { name: "Docker", icon: <Container size={26} /> },
+    { name: "Git", icon: <GitBranch size={26} /> },
+    { name: "GitHub", icon: <Github size={26} /> },
+    { name: "VS Code", icon: <Code size={26} /> },
+    { name: "IntelliJ IDEA", icon: <Code size={26} /> },
   ],
 };
 
 const learningSkills = [
-  { name: "Google Cloud", icon: "☁️" },
-  { name: "Docker", icon: "🐳" },
-  { name: "GitHub Actions", icon: "⚙️" },
+  { name: "Google Cloud", icon: <Cloud size={24} /> },
+  { name: "Docker", icon: <Container size={24} /> },
+  { name: "GitHub Actions", icon: <GitBranch size={24} /> },
 ];
 
 export default function Skills() {
@@ -69,13 +86,13 @@ export default function Skills() {
                     key={skill.name}
                     className={`flex items-center gap-3 p-4 bg-card border border-border rounded-lg transition-all duration-200 cursor-pointer ${
                       hoveredSkill === skill.name
-                        ? "border-primary shadow-md"
+                        ? "border-primary shadow-md scale-[1.02]"
                         : "hover:border-primary/50 hover:shadow-sm"
                     }`}
                     onMouseEnter={() => setHoveredSkill(skill.name)}
                     onMouseLeave={() => setHoveredSkill(null)}
                   >
-                    <span className="text-3xl">{skill.icon}</span>
+                    <span className="text-primary">{skill.icon}</span>
                     <span className="font-medium">{skill.name}</span>
                   </div>
                 ))}
@@ -95,7 +112,7 @@ export default function Skills() {
                 key={skill.name}
                 className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary hover:shadow-md transition-all duration-200 cursor-pointer"
               >
-                <span className="text-2xl">{skill.icon}</span>
+                <span className="text-primary">{skill.icon}</span>
                 <span className="font-medium">{skill.name}</span>
               </div>
             ))}

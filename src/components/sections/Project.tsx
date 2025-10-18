@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface Project {
   title: string;
   description: string;
@@ -14,7 +16,7 @@ const projects: Project[] = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.",
-    image: "🛒",
+    image: "/project/endora-dark.webp", // ✅ use path from /public
     tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
     github: "#",
     live: "#",
@@ -23,26 +25,8 @@ const projects: Project[] = [
     title: "AI Chat Application",
     description:
       "Real-time chat application with AI-powered responses, file sharing, and video calls.",
-    image: "💬",
+    image: "/project/portfolio.png", // ✅ replace with your image name
     tags: ["React", "WebRTC", "OpenAI", "Socket.io"],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Task Management Tool",
-    description:
-      "Collaborative project management tool with kanban boards, time tracking, and team analytics.",
-    image: "📊",
-    tags: ["TypeScript", "Node.js", "MongoDB", "Redux"],
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Portfolio CMS",
-    description:
-      "Headless CMS for managing portfolio content with markdown support and image optimization.",
-    image: "📝",
-    tags: ["Next.js", "Sanity", "GraphQL", "Vercel"],
     github: "#",
     live: "#",
   },
@@ -52,6 +36,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 px-4 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured Projects
@@ -61,16 +46,22 @@ export function Projects() {
           </p>
         </div>
 
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:shadow-2xl"
+              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-muted-foreground transition-all duration-300 hover:shadow-2xl"
             >
-              {/* Project Image/Icon */}
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-8xl relative overflow-hidden">
-                {project.image}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+              {/* Project Image */}
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}
@@ -99,6 +90,8 @@ export function Projects() {
                   {project.github && (
                     <a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       <svg
@@ -114,6 +107,8 @@ export function Projects() {
                   {project.live && (
                     <a
                       href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       <svg

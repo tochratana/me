@@ -1,3 +1,4 @@
+import { Atom, Code, Component } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -158,24 +159,24 @@ export default function Hero() {
 
             {/* Floating tech badges */}
             <div
-              className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce"
+              className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce flex items-center gap-1"
               style={{ animationDuration: "2s" }}
             >
-              ⚛️ React
+              <Atom size={15} /> React
             </div>
 
             <div
-              className="absolute top-1/2 -left-4 bg-accent text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce"
+              className="absolute top-1/2 -left-4 bg-accent text-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce flex items-center gap-1"
               style={{ animationDuration: "2.5s", animationDelay: "0.5s" }}
             >
-              🎨 Design
+              <Component size={15}/> Design
             </div>
 
             <div
-              className="absolute -bottom-4 right-8 bg-card border border-border px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce text-foreground"
+              className="absolute -bottom-4 right-8 bg-card border border-border px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce text-foreground flex items-center gap-1"
               style={{ animationDuration: "3s", animationDelay: "1s" }}
             >
-              💻 Code
+              <Code size={15} />Code
             </div>
           </div>
         </div>
