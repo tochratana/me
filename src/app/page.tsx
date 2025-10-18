@@ -8,7 +8,6 @@ import Hero from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Project";
 import Skills from "@/components/sections/Skills";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-
 export default function Home() {
   return (
     <main className="min-h-screen">

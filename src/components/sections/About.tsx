@@ -190,7 +190,7 @@ export default function About() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
+        {/* <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Let&apos;s Work Together</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             I&apos;m always open to discussing new projects, creative ideas, or
@@ -199,7 +199,7 @@ export default function About() {
           <button className="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200">
             Get In Touch
           </button>
-        </div>
+        </div> */}
 
         {/* Fade In Animation */}
         <style jsx>{`

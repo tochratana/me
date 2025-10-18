@@ -167,7 +167,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:scale-100 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "idle" && "Send Message"}
               {status === "sending" && "Sending..."}
