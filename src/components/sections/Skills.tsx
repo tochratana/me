@@ -42,7 +42,7 @@ const learningSkills = [
 ];
 
 export default function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   return (
     <section id="skills" className="py-20 px-4">
@@ -53,7 +53,7 @@ export default function Skills() {
             Skills & Technologies
           </h2>
           <p className="text-muted-foreground text-lg">
-            Technologies and tools I've learned and used in my projects and
+            Technologies and tools I&apos;ve learned and used in my projects and
             studies.
           </p>
         </div>
