@@ -238,7 +238,7 @@ export default function Education() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center mt-16">
+        {/* <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center mt-16">
           <h3 className="text-2xl font-bold mb-4">Always Learning</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             I&apos;m committed to continuous learning and staying updated with
@@ -247,7 +247,7 @@ export default function Education() {
           <button className="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200">
             View My Projects
           </button>
-        </div>
+        </div> */}
 
         {/* Fade In Animation */}
         <style jsx>{`

@@ -17,7 +17,15 @@ const projects: Project[] = [
     description:
       "A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.",
     image: "/project/endora-dark.webp", // ✅ use path from /public
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind",
+      "Spring Boot",
+      "MongoDB",
+      "Google Cloud",
+    ],
     github: "#",
     live: "#",
   },
