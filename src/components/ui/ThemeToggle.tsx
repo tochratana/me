@@ -96,7 +96,7 @@ export const ThemeToggle = ({
   if (!mounted) {
     return (
       <button
-        className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white fixed top-6 right-6 z-50 ${
+        className={`rounded-full transition-colors duration-200 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white z-50 ${
           className || ""
         }`}
         disabled
@@ -111,7 +111,7 @@ export const ThemeToggle = ({
     <button
       ref={buttonRef}
       onClick={toggleTheme}
-      className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white fixed top-6 right-6 z-50 ${
+      className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white z-50 ${
         className || ""
       }`}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}

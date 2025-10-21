@@ -11,7 +11,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
       <Hero />
       <Skills />
       <About />

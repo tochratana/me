@@ -1,0 +1,6 @@
+# robots.txt for https://tochratana.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tochratana.com/sitemap.xml
