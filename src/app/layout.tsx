@@ -7,13 +7,17 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Toch Ratana - Full Stack Developer",
+  title: {
+    default: "Toch Ratana - Full Stack Developer",
+    template: "%s | Toch Ratana",
+  },
   description:
-    "Portfolio of Toch Ratana, a passionate Full Stack Developer skilled in Next.js, Tailwind CSS, and Spring Boot. Explore projects, skills, and contact info.",
+    "Hi, I'm Toch Ratana — a passionate Full Stack Developer skilled in Next.js, Tailwind CSS, and Spring Boot. Explore my portfolio, projects, and coding journey from Cambodia.",
   keywords: [
     "Toch Ratana",
     "Full Stack Developer",
     "Frontend Developer",
+    "Next.js Developer",
     "React Developer",
     "Tailwind CSS",
     "Spring Boot",
@@ -22,18 +26,20 @@ export const metadata: Metadata = {
     "Web Developer",
   ],
   authors: [{ name: "Toch Ratana", url: "https://tochratana.com" }],
+  creator: "Toch Ratana",
+  publisher: "Toch Ratana",
   openGraph: {
     title: "Toch Ratana - Full Stack Developer",
     description:
-      "Showcasing Toch Ratana’s web development projects, skills, and experiences.",
+      "Welcome to my personal portfolio — showcasing my web development projects, technical skills, and creative journey as a Full Stack Developer.",
     url: "https://tochratana.com",
-    siteName: "Toch Ratana Portfolio",
+    siteName: "Toch Ratana",
     images: [
       {
-        url: "https://tochratana.com/og-image.jpg", // (Optional) upload a nice preview image to your public folder
+        url: "https://tochratana.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Toch Ratana Portfolio",
+        alt: "Toch Ratana - Full Stack Developer Portfolio",
       },
     ],
     locale: "en_US",
@@ -41,13 +47,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@tochratana",
+    creator: "@tochratana",
     title: "Toch Ratana - Full Stack Developer",
     description:
-      "Portfolio of Toch Ratana, a Full Stack Developer specializing in modern web technologies.",
-    creator: "@tochratana", // optional if you have Twitter
+      "Full Stack Developer skilled in Next.js, Tailwind CSS, and Spring Boot. Visit my portfolio to explore projects and experiences.",
     images: ["https://tochratana.com/og-image.jpg"],
   },
   metadataBase: new URL("https://tochratana.com"),
+  alternates: {
+    canonical: "https://tochratana.com",
+  },
 };
 
 export default function RootLayout({
