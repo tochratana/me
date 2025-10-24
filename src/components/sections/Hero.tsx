@@ -19,7 +19,7 @@ export default function Hero() {
   }, [titles.length]);
 
   return (
-    <section className="min-h-screen flex items-center px-4 py-20 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center px-4 py-20 relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 animate-pulse" />
 

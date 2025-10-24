@@ -67,7 +67,7 @@ export function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4">
+    <div id="contact" className="min-h-screen bg-black text-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
