@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image"; // ✅ for optimized image loading
+import { BriefcaseBusiness, GraduationCap, MapPinned } from "lucide-react";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("story");
@@ -64,19 +65,19 @@ export default function About() {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl">📍</span>
+                  <span className="text-xl"><MapPinned /></span>
                   <span className="text-muted-foreground">
                     Phnom Penh, Cambodia
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl">🎓</span>
+                  <span className="text-xl"><GraduationCap /></span>
                   <span className="text-muted-foreground">
                     Information Technology (Web Dev Focus)
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl">💼</span>
+                  <span className="text-xl"><BriefcaseBusiness /></span>
                   <span className="text-muted-foreground">
                     2+ Years Experience
                   </span>

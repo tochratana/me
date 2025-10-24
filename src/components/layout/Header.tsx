@@ -3,13 +3,6 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
 
-// Mock ThemeToggle component
-// const ThemeToggle = () => (
-//   <button className="inline-flex items-center justify-center rounded-lg p-2 text-foreground transition-colors hover:bg-accent">
-//     <span className="text-sm">🌓</span>
-//   </button>
-// );
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
@@ -36,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-800 dark:bg-gray-950/95">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
         aria-label="Global"
