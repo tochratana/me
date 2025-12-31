@@ -1,66 +1,40 @@
-import { useState } from "react";
 import {
-  Hexagon,
   Code,
   Braces,
-  Database,
   Cloud,
   Github,
   GitBranch,
   Container,
   Terminal,
-  Coffee,
-  Leaf,
-  Palette,
-  Globe,
-  Layers,
+  Code2,
+  Server,
   Cpu,
+  Sparkles,
 } from "lucide-react";
 
 const skillsData = {
-  Frontend: [
-    { name: "Next.js", icon: <Hexagon size={26} /> },
-    { name: "React", icon: <Code size={26} /> },
-    { name: "TypeScript", icon: <Braces size={26} /> },
-    { name: "JavaScript", icon: <Braces size={26} /> },
-    { name: "Tailwind CSS", icon: <Palette size={26} /> },
-    { name: "CSS3", icon: <Layers size={26} /> },
-    { name: "HTML5", icon: <Globe size={26} /> },
-  ],
   Backend: [
-    { name: "Express.js", icon: <Terminal size={26} /> },
-    { name: "Node.js", icon: <Cpu size={26} /> },
-    { name: "Spring Boot", icon: <Leaf size={26} /> },
-    { name: "Java", icon: <Coffee size={26} /> },
-    { name: "FastAPI", icon: <Terminal size={26} /> },
-    { name: "Python", icon: <Braces size={26} /> },
-  ],
-  Databases: [
-    { name: "MongoDB", icon: <Database size={26} /> },
-    { name: "PostgreSQL", icon: <Database size={26} /> },
-    { name: "MySQL", icon: <Database size={26} /> },
-    { name: "SQLite", icon: <Database size={26} /> },
+    { name: "Spring Boot", icon: Server },
+    { name: "Java", icon: Code2 },
+    { name: "FastAPI", icon: Terminal },
+    { name: "Python", icon: Braces },
   ],
   "Tools & DevOps": [
-    { name: "Google Cloud", icon: <Cloud size={26} /> },
-    { name: "GitHub Actions", icon: <GitBranch size={26} /> },
-    { name: "Docker", icon: <Container size={26} /> },
-    { name: "Git", icon: <GitBranch size={26} /> },
-    { name: "GitHub", icon: <Github size={26} /> },
-    { name: "VS Code", icon: <Code size={26} /> },
-    { name: "IntelliJ IDEA", icon: <Code size={26} /> },
+    { name: "Google Cloud", icon: Cloud },
+    { name: "GitHub Actions", icon: GitBranch },
+    { name: "Docker", icon: Container },
+    { name: "Git", icon: GitBranch },
+    { name: "GitHub", icon: Github }
   ],
 };
 
 const learningSkills = [
-  { name: "Google Cloud", icon: <Cloud size={24} /> },
-  { name: "Docker", icon: <Container size={24} /> },
-  { name: "GitHub Actions", icon: <GitBranch size={24} /> },
+  { name: "Google Cloud", icon: Cloud },
+  { name: "Docker", icon: Container },
+  { name: "GitHub Actions", icon: GitBranch },
 ];
 
 export default function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -70,52 +44,66 @@ export default function Skills() {
             Skills & Technologies
           </h2>
           <p className="text-muted-foreground text-lg">
-            Technologies and tools I&apos;ve learned and used in my projects and
-            studies.
+            Technologies and tools I&apos;ve learned and used in my projects and studies.
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* Skills Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
           {Object.entries(skillsData).map(([category, skills]) => (
-            <div key={category}>
-              <h3 className="text-2xl font-bold mb-6">{category}</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className={`flex items-center gap-3 p-4 bg-card border border-border rounded-lg transition-all duration-200 cursor-pointer ${
-                      hoveredSkill === skill.name
-                        ? "border-primary shadow-md scale-[1.02]"
-                        : "hover:border-primary/50 hover:shadow-sm"
-                    }`}
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill(null)}
-                  >
-                    <span className="text-primary">{skill.icon}</span>
-                    <span className="font-medium">{skill.name}</span>
-                  </div>
-                ))}
+            <div
+              key={category}
+              className="bg-card border border-border rounded-lg p-6"
+            >
+              <h3 className="text-xl font-bold mb-6">{category}</h3>
+              <div className="space-y-3">
+                {skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-3 bg-background/50 rounded-lg hover:bg-accent/50 transition-colors duration-200"
+                    >
+                      <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
+                        <Icon size={22} className="text-primary" />
+                      </div>
+                      <span className="font-medium">{skill.name}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
 
         {/* Currently Learning Section */}
-        <div className="text-center border-t border-border pt-12">
-          <p className="text-muted-foreground mb-6 text-lg">
-            Currently learning and expanding my skills in:
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {learningSkills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary hover:shadow-md transition-all duration-200 cursor-pointer"
-              >
-                <span className="text-primary">{skill.icon}</span>
-                <span className="font-medium">{skill.name}</span>
-              </div>
-            ))}
+        <div className="bg-card border border-border rounded-lg p-8">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
+              <Sparkles size={18} className="text-primary" />
+              <span className="text-sm font-semibold text-primary">
+                Currently Learning
+              </span>
+            </div>
+            <p className="text-muted-foreground">
+              Expanding my skills and exploring new technologies
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {learningSkills.map((skill) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={skill.name}
+                  className="flex items-center gap-3 p-4 bg-background/50 rounded-lg hover:bg-accent/50 transition-colors duration-200"
+                >
+                  <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg">
+                    <Icon size={22} className="text-primary" />
+                  </div>
+                  <span className="font-medium">{skill.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

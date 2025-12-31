@@ -1,32 +1,8 @@
 import { useState } from "react";
-import Image from "next/image"; // ✅ for optimized image loading
 import { BriefcaseBusiness, GraduationCap, MapPinned } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
-  const [activeTab, setActiveTab] = useState("story");
-
-  const interests = [
-    {
-      icon: "💻",
-      title: "Coding",
-      description: "Building innovative solutions",
-    },
-    {
-      icon: "🎨",
-      title: "Design",
-      description: "Creating beautiful interfaces",
-    },
-    { icon: "📚", title: "Learning", description: "Always exploring new tech" },
-    { icon: "🚀", title: "Innovation", description: "Pushing boundaries" },
-  ];
-
-  const values = [
-    { title: "Quality", description: "Writing clean, maintainable code" },
-    { title: "Collaboration", description: "Working effectively in teams" },
-    { title: "Growth", description: "Continuous learning and improvement" },
-    { title: "Impact", description: "Building products that matter" },
-  ];
-
   return (
     <section id="about" className="py-20 px-4 bg-background text-foreground">
       <div className="max-w-6xl mx-auto">
@@ -38,186 +14,95 @@ export default function About() {
           </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Profile Card */}
-          <div className="lg:col-span-1">
-            <div className="bg-card border border-border rounded-2xl p-8 sticky top-8 shadow-lg hover:shadow-xl transition-all">
-              <div className="relative w-40 h-40 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl"></div>
-                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl hover:scale-105 transition-transform duration-300">
-                  <Image
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Left Side - Image and Info */}
+          <div className="flex flex-col items-center lg:items-start">
+            <div className="relative w-64 h-64 mb-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl"></div>
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl">
+                <Image
                     src="/project/me.JPG"
                     alt="Toch Ratana"
                     width={160}
                     height={160}
                     className="w-full h-full object-cover"
                   />
-                </div>
               </div>
+            </div>
 
-              <h3 className="text-2xl font-bold text-center mb-2">
-                Toch Ratana
-              </h3>
-              <p className="text-muted-foreground text-center mb-6">
-                Full-Stack Developer
-              </p>
+            <h3 className="text-3xl font-bold mb-2">Toch Ratana</h3>
+            <p className="text-muted-foreground mb-8 text-lg">Full-Stack Developer</p>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl"><MapPinned /></span>
-                  <span className="text-muted-foreground">
-                    Phnom Penh, Cambodia
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl"><GraduationCap /></span>
-                  <span className="text-muted-foreground">
-                    Information Technology (Web Dev Focus)
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  <span className="text-xl"><BriefcaseBusiness /></span>
-                  <span className="text-muted-foreground">
-                    2+ Years Experience
-                  </span>
-                </div>
+            <div className="space-y-4 w-full max-w-sm">
+              <div className="flex items-center gap-3">
+                <MapPinned className="text-primary" />
+                <span className="text-muted-foreground">Phnom Penh, Cambodia</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <GraduationCap className="text-primary" />
+                <span className="text-muted-foreground">
+                  Information Technology (Web Dev Focus)
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <BriefcaseBusiness className="text-primary" />
+                <span className="text-muted-foreground">2+ Years Experience</span>
               </div>
             </div>
           </div>
 
-          {/* Content Tabs */}
-          <div className="lg:col-span-2">
-            {/* Tab Buttons */}
-            <div className="flex gap-2 mb-8 border-b border-border">
-              {["story", "interests", "values"].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                    activeTab === tab
-                      ? "border-primary text-primary"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {tab === "story"
-                    ? "My Story"
-                    : tab === "interests"
-                    ? "Interests"
-                    : "Values"}
-                </button>
-              ))}
+          {/* Right Side - Story Content */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-primary">
+                My Journey
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I'm a passionate web developer driven by the desire to solve
+                real-world problems through technology. I believe that even
+                small changes in code can create big impacts on people's daily
+                lives, and that's what motivates me to write better software
+                every day.
+              </p>
             </div>
 
-            {/* Tab Content */}
-            <div className="min-h-[400px]">
-              {activeTab === "story" && (
-                <div className="space-y-6 animate-fadeIn">
-                  <p className="text-lg leading-relaxed">
-                    Hello! I&apos;m <b>Toch Ratana</b>, a passionate full-stack
-                    developer who loves creating elegant, impactful digital
-                    experiences. My journey began with curiosity about how
-                    technology shapes our world, and that curiosity grew into a
-                    lifelong passion for coding.
-                  </p>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
-                    I enjoy transforming ideas into real, functional projects —
-                    from e-learning platforms to e-commerce sites. My focus is
-                    on writing clean, scalable code and crafting smooth user
-                    experiences that inspire people.
-                  </p>
-                  <p className="text-lg leading-relaxed text-muted-foreground">
-                    Beyond coding, I enjoy sharing knowledge through social
-                    media, making videos about my developer journey, and helping
-                    others grow in tech. ✨
-                  </p>
-                  <div className="bg-secondary border border-border rounded-xl p-6 mt-8">
-                    <h4 className="font-bold text-lg mb-2">Fun Fact</h4>
-                    <p className="text-muted-foreground">
-                      I once built a full e-commerce site solo — from UI to
-                      backend API — just for fun and learning 🚀
-                    </p>
-                  </div>
-                </div>
-              )}
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-primary">
+                What Drives Me
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                I'm fascinated by how technology can transform the way people
+                work, learn, and connect. Whether it's building a backend
+                service that powers thousands of users or creating an interface
+                that makes someone's job easier, I find purpose in creating
+                solutions that matter.
+              </p>
+            </div>
 
-              {activeTab === "interests" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fadeIn">
-                  {interests.map((interest, index) => (
-                    <div
-                      key={index}
-                      className="bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all duration-200"
-                    >
-                      <div className="text-4xl mb-4">{interest.icon}</div>
-                      <h4 className="font-bold text-lg mb-2">
-                        {interest.title}
-                      </h4>
-                      <p className="text-muted-foreground">
-                        {interest.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-primary">
+                Beyond Coding
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                When I'm not coding, you can find me watching movies or
+                listening to music. I find that these creative outlets help me
+                think differently about problems and often inspire new
+                approaches to the challenges I face in development.
+              </p>
+            </div>
 
-              {activeTab === "values" && (
-                <div className="space-y-4 animate-fadeIn">
-                  {values.map((value, index) => (
-                    <div
-                      key={index}
-                      className="bg-card border border-border rounded-xl p-6 hover:border-primary transition-all duration-200"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-primary font-bold">
-                            {index + 1}
-                          </span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg mb-2">
-                            {value.title}
-                          </h4>
-                          <p className="text-muted-foreground">
-                            {value.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+            <div className="bg-card border border-border rounded-xl p-6 mt-8">
+              <h4 className="font-bold text-lg mb-2 text-primary">
+                Fun Fact
+              </h4>
+              <p className="text-muted-foreground">
+                I once built a full e-commerce site solo — from UI to backend
+                API — just for fun and learning 🚀
+              </p>
             </div>
           </div>
         </div>
-
-        {/* CTA Section */}
-        {/* <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">Let&apos;s Work Together</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            I&apos;m always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision.
-          </p>
-          <button className="px-8 py-3 bg-primary text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200">
-            Get In Touch
-          </button>
-        </div> */}
-
-        {/* Fade In Animation */}
-        <style jsx>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.4s ease-out;
-          }
-        `}</style>
       </div>
     </section>
   );

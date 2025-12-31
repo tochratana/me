@@ -3,6 +3,7 @@
 import About from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import Education from "@/components/sections/Education";
+import Experience from "@/components/sections/Experience";
 import { Footer } from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Project";
@@ -14,11 +15,13 @@ export default function Home() {
       {/* <ThemeToggle /> */}
       <Hero />
       <Skills />
+      <Experience />
       <About />
       <Projects />
-      <Education />
+      {/* <Education /> */}
       <Contact />
       <Footer />
     </main>
   );
 }
+

@@ -59,7 +59,7 @@ export function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-muted-foreground transition-all duration-300 hover:shadow-2xl"
+              className="group relative bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300"
             >
               {/* Project Image */}
               <div className="relative aspect-video overflow-hidden">
@@ -67,14 +67,14 @@ export function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-100"
+                  className="object-cover transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold mb-3 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground mb-4 line-clamp-2">
