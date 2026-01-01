@@ -59,10 +59,10 @@ export default function About() {
                 My Journey
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm a passionate web developer driven by the desire to solve
+                I&apos;m a passionate web developer driven by the desire to solve
                 real-world problems through technology. I believe that even
-                small changes in code can create big impacts on people's daily
-                lives, and that's what motivates me to write better software
+                small changes in code can create big impacts on people&apos;s daily
+                lives, and that&apos;s what motivates me to write better software
                 every day.
               </p>
             </div>
@@ -72,10 +72,10 @@ export default function About() {
                 What Drives Me
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm fascinated by how technology can transform the way people
-                work, learn, and connect. Whether it's building a backend
+                I&apos;m fascinated by how technology can transform the way people
+                work, learn, and connect. Whether it&apos;s building a backend
                 service that powers thousands of users or creating an interface
-                that makes someone's job easier, I find purpose in creating
+                that makes someone&apos;s job easier, I find purpose in creating
                 solutions that matter.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function About() {
                 Beyond Coding
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                When I'm not coding, you can find me watching movies or
+                When I&apos;m not coding, you can find me watching movies or
                 listening to music. I find that these creative outlets help me
                 think differently about problems and often inspire new
                 approaches to the challenges I face in development.
