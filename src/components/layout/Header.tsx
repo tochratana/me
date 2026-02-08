@@ -11,6 +11,7 @@ export default function Header() {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
+    { name: "Blog", href: "https://blog.tochratana.com" }
   ];
 
   const closeMenu = () => {
