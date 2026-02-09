@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 interface Project {
   title: string;
@@ -16,7 +16,7 @@ const projects: Project[] = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.",
-    image: "/project/endora-dark.webp", // ✅ use path from /public
+    image: "/project/endora",
     tags: [
       "Next.js",
       "TypeScript",
@@ -29,18 +29,11 @@ const projects: Project[] = [
     github: "#",
     live: "#",
   },
-  {
-    title: "AI Chat Application",
-    description:
-      "Real-time chat application with AI-powered responses, file sharing, and video calls.",
-    image: "/project/portfolio.png", // ✅ replace with your image name
-    tags: ["React", "WebRTC", "OpenAI", "Socket.io"],
-    github: "#",
-    live: "#",
-  },
 ];
 
 export function Projects() {
+  const { theme } = useTheme();
+
   return (
     <section id="projects" className="py-20 px-4 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
@@ -62,12 +55,11 @@ export function Projects() {
               className="group relative bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300"
             >
               {/* Project Image */}
-              <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={project.image}
+              <div className="relative aspect-video overflow-hidden bg-muted">
+                <img
+                  src={`${project.image}-${theme}.webp`}
                   alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 transition-opacity duration-300" />
               </div>
