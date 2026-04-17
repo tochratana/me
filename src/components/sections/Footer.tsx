@@ -1,7 +1,11 @@
+"use client";
+
 import { Facebook, Github, Linkedin } from "lucide-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <p className="text-muted-foreground">
-              © {currentYear} Toch Ratana. All rights reserved.
+              © {currentYear} Toch Ratana. {t("footer.rights")}.
             </p>
           </div>
 

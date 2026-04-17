@@ -1,37 +1,16 @@
 "use client";
 
-import { Server, GitBranch, Workflow, Cloud, Terminal } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Workflow, Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const [pipelineStep, setPipelineStep] = useState(0);
-
-  const titles = [
-    "DevOps Engineer",
-    "Cloud Architect",
-    "Infrastructure Specialist",
-  ];
-  const pipelineSteps = ["Build", "Test", "Deploy", "Monitor"];
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [titles.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPipelineStep((prev) => (prev + 1) % pipelineSteps.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [pipelineSteps.length]);
 
   return (
     <section
@@ -65,25 +44,19 @@ export default function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
-            Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Toch Ratana
+              {t("hero.greeting")}
             </span>
           </h1>
 
           <div className="h-16 mb-6">
             <p className="text-2xl md:text-3xl text-muted-foreground transition-all duration-500">
-              A passionate{" "}
-              <span className="text-primary font-semibold">
-                {titles[currentTitle]}
-              </span>
+              <span className="text-primary font-semibold">{t("hero.title")}</span>
             </p>
           </div>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Automating infrastructure, optimizing CI/CD pipelines, and building
-            scalable cloud solutions. Let&apos;s streamline your deployment
-            process.
+            {t("hero.description")}
           </p>
 
           <div className="flex gap-4 flex-wrap">
@@ -92,21 +65,21 @@ export default function Hero() {
               className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl font-medium flex items-center gap-2"
             >
               <Workflow size={20} />
-              View Pipelines
+              {t("hero.cta")}
             </a>
             <a
               href="#contact"
               className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl font-medium flex items-center gap-2"
             >
               <Terminal size={20} />
-              Get In Touch
+              {t("hero.contactMe")}
             </a>
           </div>
 
           {/* Tech Stack Pills */}
           <div className="flex gap-2 mt-8 flex-wrap">
             {["Docker", "Kubernetes", "GCP", "Terraform", "Jenkins"].map(
-              (tech, i) => (
+              (tech) => (
                 <div
                   key={tech}
                   className="px-3 py-1 bg-card border border-border rounded-full text-xs font-medium text-foreground hover:border-primary transition-colors"
@@ -119,15 +92,13 @@ export default function Hero() {
         </div>
 
         {/* Right side - Terminal visualization */}
-        <div
+        {/* <div
           className={`relative transition-all duration-1000 delay-300 ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}
         >
           <div className="relative w-full max-w-lg mx-auto">
-            {/* Main terminal window */}
             <div className="bg-card border border-border rounded-xl shadow-2xl overflow-hidden">
-              {/* Window header */}
               <div className="bg-secondary px-4 py-3 flex items-center gap-2 border-b border-border">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 cursor-pointer"></div>
@@ -140,10 +111,9 @@ export default function Hero() {
                 </span>
               </div>
 
-              {/* Terminal content */}
               <div className="p-6 font-mono text-sm bg-card min-h-[400px]">
                 <div className="space-y-3">
-                  {/* Command 1 */}
+            
                   <div className="flex items-center gap-2">
                     <span className="text-green-500">➜</span>
                     <span className="text-blue-500">~</span>
@@ -168,7 +138,6 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Command 2 */}
                   <div className="flex items-center gap-2 pt-2">
                     <span className="text-green-500">➜</span>
                     <span className="text-blue-500">~</span>
@@ -189,7 +158,7 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Command 3 */}
+    
                   <div className="flex items-center gap-2 pt-2">
                     <span className="text-green-500">➜</span>
                     <span className="text-blue-500">~</span>
@@ -213,7 +182,7 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Pipeline status */}
+    
                   <div className="pt-4 border-t border-border">
                     <div className="text-xs text-muted-foreground mb-2 flex items-center gap-2">
                       <Workflow size={12} />
@@ -242,7 +211,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating tech badges */}
+          
             <div
               className="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce flex items-center gap-1"
               style={{ animationDuration: "2s" }}
@@ -264,7 +233,7 @@ export default function Hero() {
               <GitBranch size={15} /> CI/CD
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll indicator */}

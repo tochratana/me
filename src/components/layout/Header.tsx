@@ -2,16 +2,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
-    { name: "Blog", href: "https://blog.tochratana.com" }
+    { name: t("header.home"), href: "#home" },
+    { name: t("header.about"), href: "#about" },
+    { name: t("header.skills"), href: "#skills" },
+    { name: t("header.contact"), href: "#contact" },
+    { name: "Blog", href: "https://blog.tochratana.com" },
   ];
 
   const closeMenu = () => {
@@ -48,6 +51,9 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+
           {/* Theme Toggle Button */}
           <ThemeToggle />
 
@@ -71,7 +77,11 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="border-t border-gray-200 dark:border-gray-800 lg:hidden">
-          <div className="space-y-1 px-4 py-3">
+          <div className="space-y-4 px-4 py-3">
+            {/* Language Switcher - Mobile */}
+            <div className="pb-3 border-b border-gray-200 dark:border-gray-800">
+              <LanguageSwitcher />
+            </div>
             {navigation.map((item) => (
               <a
                 key={item.name}

@@ -1,0 +1,54 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Toch Ratana",
+    "title": "Full Stack Developer",
+    "description": "A passionate Full Stack Developer skilled in Next.js, React, Tailwind CSS, and backend technologies. I transform ideas into elegant, scalable web solutions.",
+    "cta": "Explore My Work",
+    "contactMe": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a Full Stack Developer from Cambodia with a passion for building modern, responsive web applications. With expertise in both frontend and backend technologies, I create seamless digital experiences."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools & Platforms"
+  },
+  "experience": {
+    "title": "Professional Experience"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "I'm always interested in hearing about new opportunities and collaborations.",
+    "email": "Email Me",
+    "followMe": "Follow Me",
+    "sendMessage": "Send Message"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with care by Toch Ratana"
+  },
+  "language": {
+    "english": "English",
+    "khmer": "Khmer"
+  }
+}
