@@ -96,11 +96,6 @@ export default function About() {
                 approaches to the challenges I face in development.
               </p>
             </div>
-
-            <div className="bg-card border border-border rounded-xl p-6 mt-8">
-              <h4 className="font-bold text-lg mb-2 text-primary">Fun Fact</h4>
-              <p className="text-muted-foreground">Sl ke menak eng 🥹</p>
-            </div>
           </div>
         </div>
       </div>

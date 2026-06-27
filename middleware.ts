@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const locales = ["en", "km"];
+const locales = ["en", "km"] as const;
 const defaultLocale = "en";
 
 export function middleware(request: NextRequest) {
@@ -13,11 +13,17 @@ export function middleware(request: NextRequest) {
   );
 
   if (!pathnameHasLocale) {
-    // Get the preferred language from accept-language header
+    const savedLocale = request.cookies.get("NEXT_LOCALE")?.value;
+
+    // Prefer the saved manual choice, then fall back to the browser language.
     const acceptLanguage = request.headers.get("accept-language") || "";
-    const preferredLocale = acceptLanguage.includes("km")
-      ? "km"
-      : defaultLocale;
+    let preferredLocale = defaultLocale;
+
+    if (savedLocale === "en" || savedLocale === "km") {
+      preferredLocale = savedLocale;
+    } else if (acceptLanguage.includes("km")) {
+      preferredLocale = "km";
+    }
 
     // Redirect to the preferred locale
     return NextResponse.redirect(

@@ -85,6 +85,13 @@ export default async function LocaleLayout({
           content="safoFDvc9jfRIVoNCZSIIeXGIs7zJm7fkJZplWac8J0"
         />
 
+        {/* ✅ Apply saved theme BEFORE React hydrates to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}else{document.documentElement.classList.remove("dark")}}catch(e){}})();`,
+          }}
+        />
+
         {/* ✅ JSON-LD Schema for SEO */}
         <script
           type="application/ld+json"
@@ -125,8 +132,10 @@ export default async function LocaleLayout({
 
       <body className={inter.className}>
         <I18nProvider locale={lang}>
-          <Header />
-          <ThemeWrapper>{children}</ThemeWrapper>
+          <ThemeWrapper>
+            <Header />
+            {children}
+          </ThemeWrapper>
           <GoogleAnalytics />
         </I18nProvider>
       </body>
