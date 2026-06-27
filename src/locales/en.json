@@ -9,8 +9,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi, I'm Toch Ratana",
-    "title": "Full Stack Developer",
+    "greeting": "Toch Ratana",
+    "title": "DevOps Engineer",
     "description": "A passionate Full Stack Developer skilled in Next.js, React, Tailwind CSS, and backend technologies. I transform ideas into elegant, scalable web solutions.",
     "cta": "Explore My Work",
     "contactMe": "Get In Touch"

@@ -77,6 +77,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-size-hero-title: 3rem;
+  --line-height-hero-title: 1.05;
+  --font-size-hero-subtitle: 1.5rem;
+  --line-height-hero-subtitle: 1.2;
+  --font-size-header: 16px;
+  --line-height-header: 1.5;
 }
 
 .dark {
@@ -111,6 +117,20 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-hero-title: 3.75rem;
+    --font-size-hero-subtitle: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-hero-title: 4.5rem;
+    --font-size-hero-subtitle: 2rem;
+  }
 }
 
 @layer base {

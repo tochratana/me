@@ -1,7 +1,6 @@
 "use client";
 
-import { Sparkles, Server, Terminal } from "lucide-react";
-import { useState } from "react";
+import { Server, Terminal } from "lucide-react";
 
 const skillsData = {
   "Cloud & Infrastructure": [
@@ -113,8 +112,6 @@ const learningSkills = [
 ];
 
 export default function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-
   return (
     <section id="skills" className="py-20 px-4 relative overflow-hidden">
       {/* Background decoration */}
@@ -152,37 +149,22 @@ export default function Skills() {
                 <span className="line-clamp-2">{category}</span>
               </h3>
               <div className="space-y-2">
-                {skills.map((skill) => {
-                  const isHovered =
-                    hoveredSkill === `${category}-${skill.name}`;
-                  return (
-                    <div
-                      key={skill.name}
-                      className="group/item"
-                      onMouseEnter={() =>
-                        setHoveredSkill(`${category}-${skill.name}`)
-                      }
-                      onMouseLeave={() => setHoveredSkill(null)}
-                    >
-                      <div className="flex items-center gap-2 p-2 bg-background/50 rounded-md hover:bg-accent/50 transition-all duration-200">
-                        <div className="w-7 h-7 flex items-center justify-center bg-primary/10 rounded-md group-hover/item:bg-white group-hover/item:shadow-md transition-all duration-300 overflow-hidden flex-shrink-0">
-                          {isHovered ? (
-                            <img
-                              src={skill.logo}
-                              alt={skill.name}
-                              className="w-5 h-5 object-contain"
-                            />
-                          ) : (
-                            <div className="w-4 h-4 rounded bg-primary/50" />
-                          )}
-                        </div>
-                        <span className="text-xs font-medium group-hover/item:text-primary transition-colors line-clamp-1">
-                          {skill.name}
-                        </span>
+                {skills.map((skill) => (
+                  <div key={skill.name} className="group/item">
+                    <div className="flex items-center gap-2 p-2 bg-background/50 rounded-md hover:bg-accent/50 transition-all duration-200">
+                      <div className="w-7 h-7 flex items-center justify-center bg-white shadow-sm rounded-md group-hover/item:shadow-md transition-all duration-300 overflow-hidden flex-shrink-0">
+                        <img
+                          src={skill.logo}
+                          alt={skill.name}
+                          className="w-5 h-5 object-contain"
+                        />
                       </div>
+                      <span className="text-xs font-medium group-hover/item:text-primary transition-colors line-clamp-1">
+                        {skill.name}
+                      </span>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
           ))}
