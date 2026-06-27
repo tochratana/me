@@ -61,7 +61,7 @@ export function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--site-image-overlay),transparent)] opacity-70 transition-opacity duration-300" />
               </div>
 
               {/* Project Info */}

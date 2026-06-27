@@ -9,6 +9,10 @@ const skillsData = {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
     },
     {
+      name: "DigitalOcean",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg",
+    },
+    {
       name: "Terraform",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg",
     },
@@ -97,17 +101,17 @@ const learningSkills = [
   {
     name: "Service Mesh (Istio)",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
-    color: "from-blue-500 to-cyan-500",
+    gradient: "var(--gradient-learning-istio)",
   },
   {
     name: "ArgoCD",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg",
-    color: "from-orange-500 to-red-500",
+    gradient: "var(--gradient-learning-argocd)",
   },
   {
     name: "Helm",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg",
-    color: "from-cyan-500 to-blue-600",
+    gradient: "var(--gradient-learning-helm)",
   },
 ];
 
@@ -152,7 +156,7 @@ export default function Skills() {
                 {skills.map((skill) => (
                   <div key={skill.name} className="group/item">
                     <div className="flex items-center gap-2 p-2 bg-background/50 rounded-md hover:bg-accent/50 transition-all duration-200">
-                      <div className="w-7 h-7 flex items-center justify-center bg-white shadow-sm rounded-md group-hover/item:shadow-md transition-all duration-300 overflow-hidden flex-shrink-0">
+                      <div className="w-7 h-7 flex items-center justify-center bg-[var(--site-logo-tile-bg)] shadow-sm rounded-md group-hover/item:shadow-md transition-all duration-300 overflow-hidden flex-shrink-0">
                         <img
                           src={skill.logo}
                           alt={skill.name}
@@ -197,7 +201,8 @@ export default function Skills() {
                 <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                   <div className="flex flex-col items-center text-center gap-4">
                     <div
-                      className={`w-16 h-16 flex items-center justify-center bg-gradient-to-br ${skill.color} rounded-xl shadow-lg group-hover/card:scale-110 transition-transform duration-300`}
+                      className="w-16 h-16 flex items-center justify-center rounded-xl shadow-lg group-hover/card:scale-110 transition-transform duration-300"
+                      style={{ background: skill.gradient }}
                     >
                       <img
                         src={skill.logo}
@@ -210,7 +215,7 @@ export default function Skills() {
                         {skill.name}
                       </span>
                       <div className="flex items-center gap-1 justify-center">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                        <div className="w-1.5 h-1.5 bg-[var(--site-status-success-bg)] rounded-full animate-pulse" />
                         <span className="text-xs text-muted-foreground">
                           In Progress
                         </span>

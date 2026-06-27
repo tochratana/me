@@ -83,6 +83,48 @@
   --line-height-hero-subtitle: 1.2;
   --font-size-header: 16px;
   --line-height-header: 1.5;
+  --header-bg: rgb(255 255 255 / 0.95);
+  --header-border: rgb(226 232 240 / 0.8);
+  --header-text: rgb(51 65 85);
+  --header-hover-bg: rgb(241 245 249);
+  --header-hover-text: rgb(15 23 42);
+  --header-shadow: rgb(15 23 42 / 0.05);
+  --site-page-bg: #ffffff;
+  --site-card-bg: #ffffff;
+  --site-card-border: rgb(229 231 235);
+  --site-text: rgb(17 24 39);
+  --site-muted-text: rgb(75 85 99);
+  --site-chip-bg: rgb(243 244 246);
+  --site-chip-text: rgb(17 24 39);
+  --site-field-bg: rgb(249 250 251);
+  --site-field-border: rgb(209 213 219);
+  --site-field-placeholder: rgb(107 114 128);
+  --site-focus-border: rgb(59 130 246);
+  --site-focus-ring: rgb(59 130 246 / 0.2);
+  --site-button-primary-bg: rgb(17 24 39);
+  --site-button-primary-text: #ffffff;
+  --site-button-primary-hover-bg: rgb(31 41 55);
+  --site-button-secondary-bg: rgb(243 244 246);
+  --site-button-secondary-text: rgb(17 24 39);
+  --site-button-secondary-hover-bg: rgb(229 231 235);
+  --site-status-success-bg: rgb(22 163 74);
+  --site-status-success-text: #ffffff;
+  --site-logo-tile-bg: #ffffff;
+  --site-image-overlay: rgb(0 0 0 / 0.4);
+  --dotted-bg: #ffffff;
+  --dotted-dot-color: rgb(0 0 0 / 0.15);
+  --dotted-dot-rgb: 0, 0, 0;
+  --gradient-education-degree: linear-gradient(to bottom right, #3b82f6, #6366f1);
+  --gradient-education-school: linear-gradient(to bottom right, #22c55e, #14b8a6);
+  --gradient-cert-web: linear-gradient(to bottom right, #a855f7, #ec4899);
+  --gradient-cert-js: linear-gradient(to bottom right, #eab308, #f97316);
+  --gradient-cert-design: linear-gradient(to bottom right, #ec4899, #f43f5e);
+  --gradient-experience-endora: linear-gradient(to bottom right, #a855f7, #ec4899);
+  --gradient-experience-fluent: linear-gradient(to bottom right, #22c55e, #10b981);
+  --gradient-experience-service: linear-gradient(to bottom right, #f97316, #ef4444);
+  --gradient-learning-istio: linear-gradient(to bottom right, #3b82f6, #06b6d4);
+  --gradient-learning-argocd: linear-gradient(to bottom right, #f97316, #ef4444);
+  --gradient-learning-helm: linear-gradient(to bottom right, #06b6d4, #2563eb);
 }
 
 .dark {
@@ -117,6 +159,37 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --header-bg: #000000;
+  --header-border: #000000;
+  --header-text: #ffffff;
+  --header-hover-bg: #000000;
+  --header-hover-text: #ffffff;
+  --header-shadow: transparent;
+  --site-page-bg: #000000;
+  --site-card-bg: rgb(24 24 27);
+  --site-card-border: rgb(39 39 42);
+  --site-text: #ffffff;
+  --site-muted-text: rgb(156 163 175);
+  --site-chip-bg: rgb(39 39 42);
+  --site-chip-text: #ffffff;
+  --site-field-bg: rgb(39 39 42);
+  --site-field-border: rgb(63 63 70);
+  --site-field-placeholder: rgb(107 114 128);
+  --site-focus-border: #ffffff;
+  --site-focus-ring: rgb(255 255 255 / 0.2);
+  --site-button-primary-bg: #ffffff;
+  --site-button-primary-text: #000000;
+  --site-button-primary-hover-bg: rgb(229 231 235);
+  --site-button-secondary-bg: rgb(39 39 42);
+  --site-button-secondary-text: #ffffff;
+  --site-button-secondary-hover-bg: rgb(63 63 70);
+  --site-status-success-bg: rgb(22 163 74);
+  --site-status-success-text: #ffffff;
+  --site-logo-tile-bg: #ffffff;
+  --site-image-overlay: rgb(0 0 0 / 0.4);
+  --dotted-bg: #000000;
+  --dotted-dot-color: rgb(255 255 255 / 0.15);
+  --dotted-dot-rgb: 255, 255, 255;
 }
 
 @media (min-width: 768px) {

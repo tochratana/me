@@ -20,7 +20,7 @@ export default function Experience() {
             description:
                 "Endora is a developer-focused platform designed to generate and manage APIs efficiently. It helps developers quickly create RESTful APIs for different applications — reducing repetitive backend development work.",
             technologies: ["React", "Next.js", "TypeScript", "Node.js", "API Design"],
-            color: "from-purple-500 to-pink-500",
+            gradient: "var(--gradient-experience-endora)",
         },
         {
             company: "FluentFlow",
@@ -33,7 +33,7 @@ export default function Experience() {
             description:
                 "JobSeek is a modern job portal web application designed to connect job seekers with employers. It allows users to search, apply, and post jobs easily while providing companies a platform to find the right candidates.",
             technologies: ["React", "Next.js", "MongoDB", "Express", "REST APIs"],
-            color: "from-green-500 to-emerald-500",
+            gradient: "var(--gradient-experience-fluent)",
         },
         {
             company: "Service Listing",
@@ -46,7 +46,7 @@ export default function Experience() {
             description:
                 "Service Listing is a platform that allows users to list and find services in their community. It's designed to give users an easy way to find and book services they need.",
             technologies: ["React", "Node.js", "MongoDB", "TailwindCSS"],
-            color: "from-orange-500 to-red-500",
+            gradient: "var(--gradient-experience-service)",
         },
     ];
 

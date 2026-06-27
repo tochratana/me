@@ -27,28 +27,6 @@ function replaceUrlLocale(locale: Locale) {
   window.history.replaceState(window.history.state, "", finalPath);
 }
 
-// Translate icon matching the screenshot style
-function TranslateIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.75}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M5 8l6 6" />
-      <path d="M4 6h7M7 4v2" />
-      <path d="M2 12h8" />
-      <path d="M12 6l4 10 1.5-3.5L19 16" />
-      <path d="M14.5 12.5H19" />
-    </svg>
-  );
-}
-
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
 
@@ -80,7 +58,7 @@ export default function LanguageSwitcher() {
     <button
       type="button"
       onClick={() => switchLanguage(nextLocale)}
-      className="inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
+      className="inline-flex items-center gap-1.5 text-sm text-[color:var(--header-text)] transition-colors hover:text-[color:var(--header-hover-text)]"
       aria-label={ariaLabel}
       title={ariaLabel}
     >

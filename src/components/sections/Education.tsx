@@ -17,7 +17,7 @@ export default function Education() {
         "Graduated with honors in Web Technologies",
       ],
       icon: "🎓",
-      color: "from-blue-500 to-indigo-500",
+      gradient: "var(--gradient-education-degree)",
       type: "degree",
     },
     {
@@ -33,7 +33,7 @@ export default function Education() {
         "Top student in Mathematics",
       ],
       icon: "📚",
-      color: "from-green-500 to-teal-500",
+      gradient: "var(--gradient-education-school)",
       type: "degree",
     },
   ];
@@ -45,7 +45,7 @@ export default function Education() {
       date: "2022",
       skills: ["React", "Node.js", "MongoDB", "REST APIs"],
       icon: "💻",
-      color: "from-purple-500 to-pink-500",
+      gradient: "var(--gradient-cert-web)",
       type: "certification",
     },
     {
@@ -54,7 +54,7 @@ export default function Education() {
       date: "2021",
       skills: ["ES6+", "Async/Await", "Closures", "Prototypes"],
       icon: "⚡",
-      color: "from-yellow-500 to-orange-500",
+      gradient: "var(--gradient-cert-js)",
       type: "certification",
     },
     {
@@ -63,7 +63,7 @@ export default function Education() {
       date: "2021",
       skills: ["Figma", "User Research", "Wireframing", "Prototyping"],
       icon: "🎨",
-      color: "from-pink-500 to-rose-500",
+      gradient: "var(--gradient-cert-design)",
       type: "certification",
     },
   ];
@@ -103,7 +103,8 @@ export default function Education() {
                     <div className="flex items-start gap-4 mb-4">
                       {/* Icon with gradient */}
                       <div
-                        className={`w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br ${edu.color} flex items-center justify-center text-2xl md:text-3xl shrink-0`}
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center text-2xl md:text-3xl shrink-0"
+                        style={{ background: edu.gradient }}
                       >
                         {edu.icon}
                       </div>
@@ -172,7 +173,8 @@ export default function Education() {
               >
                 {/* Icon */}
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center text-2xl mb-4`}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  style={{ background: cert.gradient }}
                 >
                   {cert.icon}
                 </div>
@@ -222,4 +224,3 @@ export default function Education() {
     </section>
   );
 }
-

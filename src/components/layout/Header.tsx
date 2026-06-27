@@ -23,7 +23,7 @@ export default function Header() {
     { name: t("header.contact"), href: "#contact" },
     {
       name: "Blog",
-      href: "https://blog.tochratana.com",
+      href: "#",
       icon: ArrowUpRight,
       external: true,
     },
@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-slate-200/80 bg-white/95 px-4 py-3 shadow-2xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/80 dark:bg-slate-950/90">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 text-[color:var(--header-text)] [box-shadow:0_25px_50px_-12px_var(--header-shadow)] backdrop-blur">
         <span className="hidden sm:inline cursor-pointer font-bold">NEXI</span>
 
         <div className="hidden flex-1 items-center justify-center gap-4 lg:flex">
@@ -48,7 +48,7 @@ export default function Header() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center justify-center gap-1 rounded rounded-5 px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-slate-700 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-white"
+                className="inline-flex items-center justify-center gap-1 rounded rounded-5 px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)]"
               >
                 <span>{item.name}</span>
                 {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
@@ -65,7 +65,7 @@ export default function Header() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-foreground transition hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-900 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--header-border)] bg-[var(--header-bg)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)] lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
           >
@@ -80,7 +80,7 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="mx-auto mt-3 max-w-7xl rounded-3xl border border-slate-200/80 bg-white/95 px-4 py-3 shadow-2xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/80 dark:bg-slate-950/90 lg:hidden">
+        <div className="mx-auto mt-3 max-w-7xl rounded-3xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 [box-shadow:0_25px_50px_-12px_var(--header-shadow)] backdrop-blur lg:hidden">
           <div className="flex flex-col gap-2">
             {navigation.map((item) => {
               const Icon = item.icon;
@@ -91,7 +91,7 @@ export default function Header() {
                   href={item.href}
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-1 rounded-full px-4 py-3 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-slate-900 transition hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900"
+                  className="inline-flex items-center gap-1 rounded-full px-4 py-3 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)]"
                   onClick={closeMenu}
                 >
                   <span>{item.name}</span>

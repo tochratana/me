@@ -20,14 +20,30 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameId = useRef<number | null>(null);
-  const [isDark, setIsDark] = useState(true);
+  const [themeColors, setThemeColors] = useState({
+    backgroundColor: "var(--dotted-bg)",
+    dotColor: "var(--dotted-dot-color)",
+    dotRgb: "255, 255, 255",
+  });
 
   // Listen for theme changes
   useEffect(() => {
     // Check initial theme
     const checkTheme = () => {
-      const isDarkMode = document.documentElement.classList.contains("dark");
-      setIsDark(isDarkMode);
+      const styles = getComputedStyle(document.documentElement);
+      const backgroundColor =
+        styles.getPropertyValue("--dotted-bg").trim() || "var(--dotted-bg)";
+      const dotColor =
+        styles.getPropertyValue("--dotted-dot-color").trim() ||
+        "var(--dotted-dot-color)";
+      const dotRgb =
+        styles.getPropertyValue("--dotted-dot-rgb").trim() || "255, 255, 255";
+
+      setThemeColors({
+        backgroundColor,
+        dotColor,
+        dotRgb,
+      });
     };
 
     checkTheme();
@@ -41,10 +57,6 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
 
     return () => observer.disconnect();
   }, []);
-
-  // Theme-aware colors
-  const backgroundColor = isDark ? "#000000" : "#ffffff";
-  const dotColor = isDark ? "rgba(255, 255, 255, 0.15)" : "rgba(0, 0, 0, 0.15)";
 
   useEffect(() => {
     if (!animated) return;
@@ -91,12 +103,7 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
               Math.min(0.3, baseOpacity + opacityVariation)
             );
 
-            // Use theme-aware color
-            const r = isDark ? 255 : 0;
-            const g = isDark ? 255 : 0;
-            const b = isDark ? 255 : 0;
-
-            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+            ctx.fillStyle = `rgba(${themeColors.dotRgb}, ${opacity})`;
             ctx.beginPath();
             ctx.arc(x, y + wave, dotSize, 0, Math.PI * 2);
             ctx.fill();
@@ -131,7 +138,7 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
 
       window.removeEventListener("resize", handleResize);
     };
-  }, [animated, animationSpeed, dotSize, dotSpacing, isDark]);
+  }, [animated, animationSpeed, dotSize, dotSpacing, themeColors.dotRgb]);
 
   const StaticBackground = () => {
     try {
@@ -143,7 +150,7 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundImage: `radial-gradient(circle, ${dotColor} ${dotSize}px, transparent ${dotSize}px)`,
+            backgroundImage: `radial-gradient(circle, ${themeColors.dotColor} ${dotSize}px, transparent ${dotSize}px)`,
             backgroundSize: `${dotSpacing}px ${dotSpacing}px`,
             zIndex: 0,
             pointerEvents: "none",
@@ -161,7 +168,7 @@ const DottedBackground: React.FC<DottedBackgroundProps> = ({
       style={{
         position: "relative",
         minHeight: "100vh",
-        backgroundColor: backgroundColor,
+        backgroundColor: themeColors.backgroundColor,
         overflow: "hidden",
         transition: "background-color 0.3s ease",
       }}
