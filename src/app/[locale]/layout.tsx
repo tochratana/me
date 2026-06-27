@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../globals.css";
 import { ThemeWrapper } from "@/components/theme/ThemeWrapper";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import { I18nProvider } from "@/components/I18nProvider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -130,7 +127,7 @@ export default async function LocaleLayout({
         />
       </head>
 
-      <body className={inter.className}>
+      <body>
         <I18nProvider locale={lang}>
           <ThemeWrapper>
             <Header />

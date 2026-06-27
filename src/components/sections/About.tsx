@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { BriefcaseBusiness, GraduationCap, MapPinned } from "lucide-react";
+import {GraduationCap, MapPinned } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {

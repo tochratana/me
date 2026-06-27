@@ -1,5 +1,6 @@
 "use client";
 
+import { Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Locale = "en" | "km";
@@ -16,12 +17,36 @@ function persistLocale(locale: Locale) {
 
 function replaceUrlLocale(locale: Locale) {
   const segments = window.location.pathname.split("/").filter(Boolean);
-  const pathWithoutLocale = isLocale(segments[0]) ? segments.slice(1) : segments;
+  const pathWithoutLocale = isLocale(segments[0])
+    ? segments.slice(1)
+    : segments;
   const restPath =
     pathWithoutLocale.length > 0 ? `/${pathWithoutLocale.join("/")}` : "";
   const finalPath = `/${locale}${restPath}${window.location.search}${window.location.hash}`;
 
   window.history.replaceState(window.history.state, "", finalPath);
+}
+
+// Translate icon matching the screenshot style
+function TranslateIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M5 8l6 6" />
+      <path d="M4 6h7M7 4v2" />
+      <path d="M2 12h8" />
+      <path d="M12 6l4 10 1.5-3.5L19 16" />
+      <path d="M14.5 12.5H19" />
+    </svg>
+  );
 }
 
 export default function LanguageSwitcher() {
@@ -39,21 +64,28 @@ export default function LanguageSwitcher() {
       : "en";
 
   const nextLocale = currentLocale === "en" ? "km" : "en";
-  const buttonLabel = nextLocale === "km" ? "🇰🇭 KM" : "🇺🇸 EN";
+
+  // Label shows the *current* language name (like the screenshot shows "អង់គ្លេស" = English)
+  const label =
+    currentLocale === "km"
+      ? t("language.khmer") // e.g. "ខ្មែរ"
+      : t("language.english"); // e.g. "អង់គ្លេស" or "English"
+
   const ariaLabel =
     nextLocale === "km"
-      ? `${t("language.khmer")} (${buttonLabel})`
-      : `${t("language.english")} (${buttonLabel})`;
+      ? t("language.switch_to_khmer")
+      : t("language.switch_to_english");
 
   return (
     <button
       type="button"
       onClick={() => switchLanguage(nextLocale)}
-      className="rounded-md bg-gray-200 px-3 py-2 font-medium text-gray-800 transition-colors hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+      className="inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
       aria-label={ariaLabel}
       title={ariaLabel}
     >
-      {buttonLabel}
+      <Languages />
+      <span>{label}</span>
     </button>
   );
 }
