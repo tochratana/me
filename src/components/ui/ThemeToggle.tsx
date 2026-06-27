@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { flushSync } from "react-dom";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -14,25 +15,13 @@ export const ThemeToggle = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, toggleTheme: toggleThemeContext } = useTheme();
   const [mounted, setMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const isDark = theme === "dark";
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const shouldBeDark = savedTheme ? savedTheme === "dark" : prefersDark;
-
-    setIsDark(shouldBeDark);
     setMounted(true);
-
-    if (shouldBeDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
   }, []);
 
   const toggleTheme = useCallback(async () => {
@@ -40,20 +29,7 @@ export const ThemeToggle = ({
 
     const doToggle = () => {
       flushSync(() => {
-        const newTheme = !isDark;
-        setIsDark(newTheme);
-
-        if (newTheme) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-
-        try {
-          localStorage.setItem("theme", newTheme ? "dark" : "light");
-        } catch {
-          // ignore
-        }
+        toggleThemeContext();
       });
     };
 
@@ -91,7 +67,7 @@ export const ThemeToggle = ({
         pseudoElement: "::view-transition-new(root)",
       }
     );
-  }, [isDark, duration, mounted]);
+  }, [duration, mounted, toggleThemeContext]);
 
   if (!mounted) {
     return (

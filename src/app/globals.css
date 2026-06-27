@@ -111,6 +111,7 @@
   --site-status-success-text: #ffffff;
   --site-logo-tile-bg: #ffffff;
   --site-image-overlay: rgb(0 0 0 / 0.4);
+  --site-feature-shadow: rgb(0 0 0 / 0.12);
   --dotted-bg: #ffffff;
   --dotted-dot-color: rgb(0 0 0 / 0.15);
   --dotted-dot-rgb: 0, 0, 0;
@@ -187,6 +188,7 @@
   --site-status-success-text: #ffffff;
   --site-logo-tile-bg: #ffffff;
   --site-image-overlay: rgb(0 0 0 / 0.4);
+  --site-feature-shadow: rgb(0 0 0 / 0.35);
   --dotted-bg: #000000;
   --dotted-dot-color: rgb(255 255 255 / 0.15);
   --dotted-dot-rgb: 255, 255, 255;
