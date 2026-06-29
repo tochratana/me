@@ -10,10 +10,28 @@
   },
   "hero": {
     "greeting": "ទូច រតនា",
-    "title": "អ្នកជំនាញខាងផ្នែក DevOps Engineer",
-    "description": "អ្នកអភិវឌ្ឍន៍ Full Stack ដែលចូលចិត្ត ជាមួយនឹងជំនាញក្នុង Next.js, React, Tailwind CSS និងបច្ចេកវិទ្យាផ្នែកខាងក្រោយ។ ខ្ញុំបំលែងគំនិតទៅជាដំណោះស្រាយគេហទំព័រដែលឆើតល្អ និងដែលអាចធ្វើឱ្យមាត្រដ្ឋាន។",
-    "cta": "រកមើលស្នាដៃរបស់ខ្ញុំ",
-    "contactMe": "ទាក់ទងមក"
+    "title": "DevOps & Cloud Engineer",
+    "status": "បើកទទួលការងារ",
+    "location": "ភ្នំពេញ កម្ពុជា",
+    "headline": "បង្កើតប្រព័ន្ធដែលអាចទុកចិត្តបាន។",
+    "description": "ខ្ញុំជួយក្រុម release ដោយមានទំនុកចិត្ត តាមរយៈ cloud infrastructure, CI/CD pipeline និង monitoring ដែលរក្សាផលិតផលឱ្យដំណើរការល្អ។",
+    "supportingText": "ការងាររបស់ខ្ញុំភ្ជាប់ infrastructure និង development team ដើម្បីឱ្យ release លឿន សុវត្ថិភាព និងងាយស្ដារវិញពេលមានបញ្ហា។",
+    "stats": {
+      "projects": {
+        "value": "30+",
+        "label": "deployments បានបញ្ចេញ"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "uptime មធ្យម"
+      },
+      "clients": {
+        "value": "12",
+        "label": "ក្រុមបានគាំទ្រ"
+      }
+    },
+    "cta": "មើលគម្រោង",
+    "contactMe": "ពិភាក្សាគ្នា"
   },
   "about": {
     "title": "អំពីខ្ញុំ",

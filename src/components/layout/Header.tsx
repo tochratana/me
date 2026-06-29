@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded rounded-lg border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-2 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl">
         <span className="hidden sm:inline cursor-pointer font-bold">NEXI</span>
 
         <div className="hidden flex-1 items-center justify-center gap-4 lg:flex">

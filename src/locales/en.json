@@ -10,10 +10,28 @@
   },
   "hero": {
     "greeting": "Toch Ratana",
-    "title": "DevOps Engineer",
-    "description": "A passionate Full Stack Developer skilled in Next.js, React, Tailwind CSS, and backend technologies. I transform ideas into elegant, scalable web solutions.",
-    "cta": "Explore My Work",
-    "contactMe": "Get In Touch"
+    "title": "DevOps & Cloud Engineer",
+    "status": "Open to work",
+    "location": "Phnom Penh, Cambodia",
+    "headline": "building reliable systems.",
+    "description": "I help teams ship with confidence by building cloud infrastructure, CI/CD pipelines, and monitoring that keep products online.",
+    "supportingText": "My work connects infrastructure and development teams so releases are faster, safer, and easier to recover when something breaks.",
+    "stats": {
+      "projects": {
+        "value": "30+",
+        "label": "deployments shipped"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "avg uptime"
+      },
+      "clients": {
+        "value": "12",
+        "label": "teams supported"
+      }
+    },
+    "cta": "View Projects",
+    "contactMe": "Let's Talk"
   },
   "about": {
     "title": "About Me",
