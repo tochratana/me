@@ -19,15 +19,15 @@
     "stats": {
       "projects": {
         "value": "30+",
-        "label": "deployments បានបញ្ចេញ"
+        "label": "project deployments​"
       },
       "uptime": {
         "value": "99.9%",
         "label": "uptime មធ្យម"
       },
       "clients": {
-        "value": "12",
-        "label": "ក្រុមបានគាំទ្រ"
+        "value": "24",
+        "label": "ម៉ោង"
       }
     },
     "cta": "មើលគម្រោង",

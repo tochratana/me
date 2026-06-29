@@ -74,7 +74,7 @@ export default function Hero() {
             {t("hero.supportingText")}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          {/* <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#projects"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-[8px] bg-[var(--hero-primary-button-bg)] px-5 text-sm font-bold text-[color:var(--hero-primary-button-text)] transition hover:bg-[var(--hero-primary-button-hover-bg)]"
@@ -89,7 +89,7 @@ export default function Hero() {
               <Mail className="h-4 w-4" aria-hidden="true" />
               {t("hero.contactMe")}
             </a>
-          </div>
+          </div> */}
 
           <dl className="mt-8 grid max-w-2xl grid-cols-3 divide-x divide-[color:var(--hero-divider)] border-y border-[color:var(--hero-divider)]">
             {stats.map((stat) => (

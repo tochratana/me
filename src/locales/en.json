@@ -26,8 +26,8 @@
         "label": "avg uptime"
       },
       "clients": {
-        "value": "12",
-        "label": "teams supported"
+        "value": "24",
+        "label": "hours"
       }
     },
     "cta": "View Projects",
