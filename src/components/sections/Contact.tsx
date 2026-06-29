@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Calendar, Mail } from "lucide-react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +15,25 @@ export function Contact() {
     "idle"
   );
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const roles = [
+    t("contact.availability.roles.devops"),
+    t("contact.availability.roles.backend"),
+  ];
+
+  const workPreferences = [
+    t("contact.availability.workPreferences.onSite"),
+    t("contact.availability.workPreferences.remote"),
+    t("contact.availability.workPreferences.hybrid"),
+  ];
+
+  const submitText = {
+    idle: t("contact.form.submit.idle"),
+    sending: t("contact.form.submit.sending"),
+    sent: t("contact.form.submit.sent"),
+    error: t("contact.form.submit.error"),
+  }[status];
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("sending");
 
@@ -61,7 +82,7 @@ export function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -75,13 +96,12 @@ export function Contact() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[color:var(--site-text)]">
-            Let&apos;s Connect
+            {t("contact.title")}
           </h1>
           <p className="text-[color:var(--site-muted-text)] text-lg max-w-2xl mx-auto">
-            I&apos;m actively looking for opportunities to start my career in
-            web development.
+            {t("contact.description.line1")}
             <br />
-            Let&apos;s discuss how I can contribute to your team!
+            {t("contact.description.line2")}
           </p>
         </div>
 
@@ -90,75 +110,60 @@ export function Contact() {
           {/* Availability Card */}
           <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
             <div className="flex items-center gap-3 mb-6">
-              <svg
-                className="w-6 h-6 text-[color:var(--site-text)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
+              <Calendar className="w-6 h-6 text-[color:var(--site-text)]" />
               <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
-                Availability
+                {t("contact.availability.title")}
               </h2>
             </div>
 
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
-                  Job Search Status
+                  {t("contact.availability.statusLabel")}
                 </h3>
                 <span className="inline-block px-3 py-1 bg-[var(--site-status-success-bg)] text-[color:var(--site-status-success-text)] text-sm font-medium rounded">
-                  Actively Looking
+                  {t("contact.availability.statusValue")}
                 </span>
               </div>
 
               <div>
                 <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
-                  Available From
+                  {t("contact.availability.availableFromLabel")}
                 </h3>
-                <p className="text-[color:var(--site-text)]">Immediately</p>
+                <p className="text-[color:var(--site-text)]">
+                  {t("contact.availability.availableFromValue")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
-                  Preferred Roles
+                  {t("contact.availability.preferredRolesLabel")}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Backend Developer
-                  </span>
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Full-Stack Developer
-                  </span>
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Frontend Developer
-                  </span>
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Junior Developer
-                  </span>
+                  {roles.map((role) => (
+                    <span
+                      key={role}
+                      className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
+                    >
+                      {role}
+                    </span>
+                  ))}
                 </div>
               </div>
 
               <div>
                 <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
-                  Work Preference
+                  {t("contact.availability.workPreferenceLabel")}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    On-site
-                  </span>
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Remote
-                  </span>
-                  <span className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded">
-                    Hybrid
-                  </span>
+                  {workPreferences.map((preference) => (
+                    <span
+                      key={preference}
+                      className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
+                    >
+                      {preference}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -168,12 +173,10 @@ export function Contact() {
           <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[color:var(--site-text)]">
-                Ready to Make an Impact
+                {t("contact.form.title")}
               </h2>
               <p className="text-[color:var(--site-muted-text)]">
-                I&apos;m excited to bring my passion for solving real-world
-                problems and creating meaningful software solutions to your
-                development team.
+                {t("contact.form.description")}
               </p>
             </div>
 
@@ -183,7 +186,7 @@ export function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2 text-[color:var(--site-text)]"
                 >
-                  Name
+                  {t("contact.form.fields.name.label")}
                 </label>
                 <input
                   type="text"
@@ -193,7 +196,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[color:var(--site-focus-border)] focus:ring-2 focus:ring-[var(--site-focus-ring)] transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
-                  placeholder="Your name"
+                  placeholder={t("contact.form.fields.name.placeholder")}
                 />
               </div>
 
@@ -202,7 +205,7 @@ export function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2 text-[color:var(--site-text)]"
                 >
-                  Email
+                  {t("contact.form.fields.email.label")}
                 </label>
                 <input
                   type="email"
@@ -212,7 +215,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[color:var(--site-focus-border)] focus:ring-2 focus:ring-[var(--site-focus-ring)] transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
-                  placeholder="your.email@example.com"
+                  placeholder={t("contact.form.fields.email.placeholder")}
                 />
               </div>
 
@@ -221,7 +224,7 @@ export function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2 text-[color:var(--site-text)]"
                 >
-                  Message
+                  {t("contact.form.fields.message.label")}
                 </label>
                 <textarea
                   id="message"
@@ -231,7 +234,7 @@ export function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[color:var(--site-focus-border)] focus:ring-2 focus:ring-[var(--site-focus-ring)] transition-all outline-none resize-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
-                  placeholder="Tell me about the opportunity..."
+                  placeholder={t("contact.form.fields.message.placeholder")}
                 />
               </div>
 
@@ -241,30 +244,15 @@ export function Contact() {
                   disabled={status === "sending"}
                   className="flex-1 py-4 bg-[var(--site-button-primary-bg)] text-[color:var(--site-button-primary-text)] rounded-lg font-medium hover:bg-[var(--site-button-primary-hover-bg)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  {status === "idle" && "Send Email"}
-                  {status === "sending" && "Sending..."}
-                  {status === "sent" && "✓ Message Sent!"}
-                  {status === "error" && "Failed - Try Again"}
+                  <Mail className="w-5 h-5" />
+                  {submitText}
                 </button>
 
                 <button
                   type="button"
                   className="px-6 py-4 bg-[var(--site-button-secondary-bg)] text-[color:var(--site-button-secondary-text)] rounded-lg font-medium hover:bg-[var(--site-button-secondary-hover-bg)] transition-all duration-300"
                 >
-                  Download Resume
+                  {t("contact.form.downloadResume")}
                 </button>
               </div>
             </form>

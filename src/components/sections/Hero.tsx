@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {

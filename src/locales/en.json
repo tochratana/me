@@ -56,10 +56,53 @@
   },
   "contact": {
     "title": "Let's Connect",
-    "description": "I'm always interested in hearing about new opportunities and collaborations.",
-    "email": "Email Me",
-    "followMe": "Follow Me",
-    "sendMessage": "Send Message"
+    "description": {
+      "line1": "I'm actively looking for opportunities to start my career in web development.",
+      "line2": "Let's discuss how I can contribute to your team!"
+    },
+    "availability": {
+      "title": "Availability",
+      "statusLabel": "Job Search Status",
+      "statusValue": "Actively Looking",
+      "availableFromLabel": "Available From",
+      "availableFromValue": "Immediately",
+      "preferredRolesLabel": "Preferred Roles",
+      "roles": {
+        "devops": "DevOps Engineer",
+        "backend": "Backend Spring Boot"
+      },
+      "workPreferenceLabel": "Work Preference",
+      "workPreferences": {
+        "onSite": "On-site",
+        "remote": "Remote",
+        "hybrid": "Hybrid"
+      }
+    },
+    "form": {
+      "title": "Happy with your contract",
+      "description": "I'm excited to bring my passion for solving real-world problems and creating meaningful software solutions to your development team.",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your.email@example.com"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell me about the opportunity..."
+        }
+      },
+      "submit": {
+        "idle": "Send Email",
+        "sending": "Sending...",
+        "sent": "Message sent!",
+        "error": "Failed - Try Again"
+      },
+      "downloadResume": "Download Resume"
+    }
   },
   "footer": {
     "rights": "All rights reserved",
