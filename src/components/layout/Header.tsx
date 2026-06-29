@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 text-[color:var(--header-text)] [box-shadow:0_25px_50px_-12px_var(--header-shadow)] backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl">
         <span className="hidden sm:inline cursor-pointer font-bold">NEXI</span>
 
         <div className="hidden flex-1 items-center justify-center gap-4 lg:flex">
@@ -80,7 +80,7 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="mx-auto mt-3 max-w-7xl rounded-3xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 [box-shadow:0_25px_50px_-12px_var(--header-shadow)] backdrop-blur lg:hidden">
+        <div className="mx-auto mt-3 max-w-7xl rounded-xl border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-3 [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-2">
             {navigation.map((item) => {
               const Icon = item.icon;

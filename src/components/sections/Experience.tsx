@@ -1,12 +1,5 @@
 "use client";
 
-import {
-    GraduationCap,
-    Code2,
-    Briefcase,
-    PenTool,
-} from "lucide-react";
-
 export default function Experience() {
     const experiences = [
         {

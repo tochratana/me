@@ -74,68 +74,80 @@ export function Projects() {
         </div>
 
         <div className="space-y-20">
-          {projects.map((project, index) => (
-            <article
-              key={index}
-              className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14"
-            >
-              <div>
-                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--site-muted-text)]">
-                  Project {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] md:text-4xl">
-                  {project.title}
-                </h3>
-                <p className="mb-6 max-w-xl text-base leading-7 text-[color:var(--site-muted-text)] md:text-lg">
-                  {project.description}
-                </p>
+          {projects.map((project, index) => {
+            const isReversed = index % 2 === 1;
 
-                <div className="mb-8 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[var(--site-chip-bg)] px-3 py-1 text-xs font-medium text-[color:var(--site-chip-text)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            return (
+              <article
+                key={project.title}
+                className={`grid items-center gap-10 lg:gap-14 ${
+                  isReversed
+                    ? "lg:grid-cols-[1.1fr_0.9fr]"
+                    : "lg:grid-cols-[0.9fr_1.1fr]"
+                }`}
+              >
+                <div className={isReversed ? "lg:order-2" : undefined}>
+                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--site-muted-text)]">
+                    Project {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] md:text-4xl">
+                    {project.title}
+                  </h3>
+                  <p className="mb-6 max-w-xl text-base leading-7 text-[color:var(--site-muted-text)] md:text-lg">
+                    {project.description}
+                  </p>
+
+                  <div className="mb-8 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[var(--site-chip-bg)] px-3 py-1 text-xs font-medium text-[color:var(--site-chip-text)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md bg-[var(--site-button-secondary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-secondary-text)] transition-colors hover:bg-[var(--site-button-secondary-hover-bg)]"
+                      >
+                        <Github className="h-4 w-4" />
+                        Code
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-md bg-[var(--site-button-primary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-primary-text)] transition-colors hover:bg-[var(--site-button-primary-hover-bg)]"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md bg-[var(--site-button-secondary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-secondary-text)] transition-colors hover:bg-[var(--site-button-secondary-hover-bg)]"
-                    >
-                      <Github className="h-4 w-4" />
-                      Code
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md bg-[var(--site-button-primary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-primary-text)] transition-colors hover:bg-[var(--site-button-primary-hover-bg)]"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Live Demo
-                    </a>
-                  )}
+                <div
+                  className={`relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)] ${
+                    isReversed ? "lg:order-1" : ""
+                  }`}
+                >
+                  <img
+                    src={project.image[theme]}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
-              </div>
-
-              <div className="relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)]">
-                <img
-                  src={project.image[theme]}
-                  alt={project.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
