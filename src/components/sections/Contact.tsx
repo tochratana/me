@@ -66,11 +66,17 @@ export function Contact() {
         }
       );
 
+      const responseText = await response.text();
+
       if (response.ok) {
         setStatus("sent");
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setStatus("idle"), 3000);
       } else {
+        console.error("EmailJS send failed:", {
+          status: response.status,
+          message: responseText,
+        });
         setStatus("error");
         setTimeout(() => setStatus("idle"), 3000);
       }
