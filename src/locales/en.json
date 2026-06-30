@@ -35,7 +35,17 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a Full Stack Developer from Cambodia with a passion for building modern, responsive web applications. With expertise in both frontend and backend technologies, I create seamless digital experiences."
+    "eyebrow": "About my work",
+    "role": "DevOps & Cloud Engineer",
+    "intro": "I focus on building reliable cloud systems, clean deployment workflows, and infrastructure that helps teams ship with confidence.",
+    "description": "My background connects DevOps, backend development, and automation, so I enjoy turning complex setup work into simple, repeatable systems.",
+    "focus": {
+      "cloud": "Cloud infrastructure",
+      "automation": "CI/CD automation",
+      "reliability": "Reliable deployments"
+    },
+    "noteTitle": "Outside the terminal",
+    "note": "I recharge with movies and music, then bring that calmer, more creative mindset back into problem solving."
   },
   "skills": {
     "title": "Technical Skills",
@@ -59,6 +69,26 @@
     "description": {
       "line1": "I'm actively looking for opportunities to start my career in web development.",
       "line2": "Let's discuss how I can contribute to your team!"
+    },
+    "details": {
+      "title": "Contact Details",
+      "phone": {
+        "label": "Phone",
+        "value": "+855 88 64 65 190"
+      },
+      "email": {
+        "label": "Email",
+        "value": "tochratana.dev@gmail.com"
+      },
+      "telegram": {
+        "label": "Telegram",
+        "value": "t.me/tochratana",
+        "href": "https://t.me/tochratana"
+      },
+      "address": {
+        "label": "Address",
+        "value": "Trapeang Chhuk, Ou Beak K'am, Phnom Penh, Cambodia"
+      }
     },
     "availability": {
       "title": "Availability",
@@ -105,6 +135,11 @@
     }
   },
   "footer": {
+    "role": "DevOps & Cloud Engineer",
+    "description": "Building reliable cloud systems, clean deployments, and simple automation for teams that want to ship with confidence.",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "contactCta": "Let's talk",
     "rights": "All rights reserved",
     "madeWith": "Made with care by Toch Ratana"
   },

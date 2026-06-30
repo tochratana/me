@@ -35,7 +35,17 @@
   },
   "about": {
     "title": "អំពីខ្ញុំ",
-    "description": "ខ្ញុំជាអ្នកអភិវឌ្ឍន៍ Full Stack ពីកម្ពុជាដែលមានលំនឹងក្នុងការបង្កើតកម្មវិធីគេហទំព័របានលឿន ឆ្លងវាង និងមានប្រតិក្រិយា។ ដោយមានជំនាញក្នុងបច្ចេកវិទ្យាផ្នែកមុខ និងផ្នែកក្រោយ ខ្ញុំបង្កើតបទពិសោធន៍ឌីជីថលដ៏នៃលក្ខណ៍ដ៏ល្អ។"
+    "eyebrow": "អំពីការងាររបស់ខ្ញុំ",
+    "role": "DevOps & Cloud Engineer",
+    "intro": "ខ្ញុំផ្តោតលើការបង្កើតប្រព័ន្ធ cloud ដែលអាចទុកចិត្តបាន workflow សម្រាប់ deployment និង infrastructure ដែលជួយឱ្យក្រុម release ដោយមានទំនុកចិត្ត។",
+    "description": "បទពិសោធន៍របស់ខ្ញុំភ្ជាប់ DevOps, backend development និង automation ដូច្នេះខ្ញុំចូលចិត្តបម្លែងការរៀបចំស្មុគស្មាញឱ្យទៅជាប្រព័ន្ធសាមញ្ញ និងអាចធ្វើឡើងវិញបាន។",
+    "focus": {
+      "cloud": "Cloud infrastructure",
+      "automation": "CI/CD automation",
+      "reliability": "Reliable deployments"
+    },
+    "noteTitle": "ក្រៅពីការងារ",
+    "note": "ខ្ញុំសម្រាកជាមួយភាពយន្ត និងតន្ត្រី ហើយយកអារម្មណ៍ស្ងប់ និងគំនិតច្នៃប្រឌិតនោះត្រឡប់មកដោះស្រាយបញ្ហាវិញ។"
   },
   "skills": {
     "title": "ជំនាញបច្ចេកទេស",
@@ -59,6 +69,26 @@
     "description": {
       "line1": "ខ្ញុំកំពុងស្វែងរកឱកាសការងារ ដើម្បីចាប់ផ្តើមអាជីពរបស់ខ្ញុំក្នុងការអភិវឌ្ឍគេហទំព័រ។",
       "line2": "មកពិភាក្សាគ្នាអំពីរបៀបដែលខ្ញុំអាចចូលរួមជាមួយក្រុមរបស់អ្នកបាន!"
+    },
+    "details": {
+      "title": "ព័ត៌មានទំនាក់ទំនង",
+      "phone": {
+        "label": "ទូរស័ព្ទ",
+        "value": "+855 88 64 65 190"
+      },
+      "email": {
+        "label": "អ៊ីមែល",
+        "value": "tochratana.dev@gmail.com"
+      },
+      "telegram": {
+        "label": "Telegram",
+        "value": "t.me/tochratana",
+        "href": "https://t.me/tochratana"
+      },
+      "address": {
+        "label": "អាសយដ្ឋាន",
+        "value": "Trapeang Chhuk, Ou Beak K'am, Phnom Penh, Cambodia"
+      }
     },
     "availability": {
       "title": "ភាពរួចរាល់",
@@ -105,8 +135,13 @@
     }
   },
   "footer": {
+    "role": "DevOps & Cloud Engineer",
+    "description": "បង្កើតប្រព័ន្ធ cloud ដែលអាចទុកចិត្តបាន deployment ដែលស្អាត និង automation សាមញ្ញសម្រាប់ក្រុមដែលចង់ release ដោយមានទំនុកចិត្ត។",
+    "navigation": "តំណភ្ជាប់",
+    "connect": "ភ្ជាប់ទំនាក់ទំនង",
+    "contactCta": "ពិភាក្សាគ្នា",
     "rights": "រក្សាសិទ្ធិទាំងអស់",
-    "madeWith": "បង្កើតដោយឆង្ហើយ ដោយ តូច រតនា"
+    "madeWith": "បង្កើតដោយយកចិត្តទុកដាក់ ដោយ ទូច រតនា"
   },
   "language": {
     "english": "Khmer",

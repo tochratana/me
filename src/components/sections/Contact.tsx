@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Mail } from "lucide-react";
+import { Calendar, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -24,6 +24,32 @@ export function Contact() {
     t("contact.availability.workPreferences.onSite"),
     t("contact.availability.workPreferences.remote"),
     t("contact.availability.workPreferences.hybrid"),
+  ];
+
+  const contactDetails = [
+    {
+      icon: Phone,
+      label: t("contact.details.phone.label"),
+      value: t("contact.details.phone.value"),
+      href: `tel:${t("contact.details.phone.value").replaceAll(" ", "")}`,
+    },
+    {
+      icon: Mail,
+      label: t("contact.details.email.label"),
+      value: t("contact.details.email.value"),
+      href: `mailto:${t("contact.details.email.value")}`,
+    },
+    {
+      icon: Send,
+      label: t("contact.details.telegram.label"),
+      value: t("contact.details.telegram.value"),
+      href: t("contact.details.telegram.href"),
+    },
+    {
+      icon: MapPin,
+      label: t("contact.details.address.label"),
+      value: t("contact.details.address.value"),
+    },
   ];
 
   const submitText = {
@@ -113,63 +139,112 @@ export function Contact() {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {/* Availability Card */}
-          <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Calendar className="w-6 h-6 text-[color:var(--site-text)]" />
-              <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
-                {t("contact.availability.title")}
-              </h2>
+          <div className="space-y-8">
+            <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Mail className="w-6 h-6 text-[color:var(--site-text)]" />
+                <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
+                  {t("contact.details.title")}
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {contactDetails.map((detail) => {
+                  const Icon = detail.icon;
+                  const content = (
+                    <>
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] bg-[var(--site-button-primary-bg)] text-[color:var(--site-button-primary-text)]">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-semibold uppercase text-[color:var(--site-muted-text)]">
+                          {detail.label}
+                        </span>
+                        <span className="mt-1 block break-words text-base font-medium leading-6 text-[color:var(--site-text)]">
+                          {detail.value}
+                        </span>
+                      </span>
+                    </>
+                  );
+
+                  return detail.href ? (
+                    <a
+                      key={detail.label}
+                      href={detail.href}
+                      className="flex items-start gap-4 rounded-[8px] p-2 transition-colors hover:bg-[var(--site-chip-bg)]"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={detail.label}
+                      className="flex items-start gap-4 rounded-[8px] p-2"
+                    >
+                      {content}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
-                  {t("contact.availability.statusLabel")}
-                </h3>
-                <span className="inline-block px-3 py-1 bg-[var(--site-status-success-bg)] text-[color:var(--site-status-success-text)] text-sm font-medium rounded">
-                  {t("contact.availability.statusValue")}
-                </span>
+            {/* Availability Card */}
+            <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Calendar className="w-6 h-6 text-[color:var(--site-text)]" />
+                <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
+                  {t("contact.availability.title")}
+                </h2>
               </div>
 
-              <div>
-                <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
-                  {t("contact.availability.availableFromLabel")}
-                </h3>
-                <p className="text-[color:var(--site-text)]">
-                  {t("contact.availability.availableFromValue")}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
-                  {t("contact.availability.preferredRolesLabel")}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {roles.map((role) => (
-                    <span
-                      key={role}
-                      className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
-                    >
-                      {role}
-                    </span>
-                  ))}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
+                    {t("contact.availability.statusLabel")}
+                  </h3>
+                  <span className="inline-block px-3 py-1 bg-[var(--site-status-success-bg)] text-[color:var(--site-status-success-text)] text-sm font-medium rounded">
+                    {t("contact.availability.statusValue")}
+                  </span>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
-                  {t("contact.availability.workPreferenceLabel")}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {workPreferences.map((preference) => (
-                    <span
-                      key={preference}
-                      className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
-                    >
-                      {preference}
-                    </span>
-                  ))}
+                <div>
+                  <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-2">
+                    {t("contact.availability.availableFromLabel")}
+                  </h3>
+                  <p className="text-[color:var(--site-text)]">
+                    {t("contact.availability.availableFromValue")}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
+                    {t("contact.availability.preferredRolesLabel")}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {roles.map((role) => (
+                      <span
+                        key={role}
+                        className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
+                      >
+                        {role}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold text-[color:var(--site-muted-text)] mb-3">
+                    {t("contact.availability.workPreferenceLabel")}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {workPreferences.map((preference) => (
+                      <span
+                        key={preference}
+                        className="px-3 py-1 bg-[var(--site-chip-bg)] text-[color:var(--site-chip-text)] text-sm rounded"
+                      >
+                        {preference}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
