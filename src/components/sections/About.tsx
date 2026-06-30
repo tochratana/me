@@ -23,8 +23,8 @@ export default function About() {
                 <Image
                   src="/project/ratana.jpg"
                   alt="Toch Ratana"
-                  width={160}
-                  height={160}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>

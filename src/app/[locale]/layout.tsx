@@ -5,40 +5,46 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import { I18nProvider } from "@/components/I18nProvider";
 
+const siteTitle = "Toch Ratana - DevOps Engineer";
+const siteDescription =
+  "Toch Ratana is a DevOps Engineer in Cambodia focused on Kubernetes, Jenkins, GitOps, Docker, Linux, Argo CD, Terraform, Vault, Prometheus, and Grafana.";
+const siteUrl = "https://tochratana.com";
+const ogImage = `${siteUrl}/og-image.jpg`;
+
 export const metadata: Metadata = {
-  title: {
-    default: "Toch Ratana - Full Stack Developer",
-    template: "%s | Toch Ratana",
-  },
-  description:
-    "Hi, I'm Toch Ratana — a passionate Full Stack Developer skilled in Next.js, Tailwind CSS, and Spring Boot. Explore my portfolio, projects, and coding journey from Cambodia.",
+  title: siteTitle,
+  description: siteDescription,
   keywords: [
     "Toch Ratana",
-    "Full Stack Developer",
-    "Frontend Developer",
-    "Next.js Developer",
-    "React Developer",
-    "Tailwind CSS",
-    "Spring Boot",
+    "DevOps Engineer",
+    "Cloud Engineer",
+    "Kubernetes",
+    "Jenkins",
+    "GitOps",
+    "Docker",
+    "Linux",
+    "Argo CD",
+    "Terraform",
+    "Vault",
+    "Prometheus",
+    "Grafana",
     "Portfolio",
-    "Cambodia Developer",
-    "Web Developer",
+    "Cambodia DevOps Engineer",
   ],
-  authors: [{ name: "Toch Ratana", url: "https://tochratana.com" }],
+  authors: [{ name: "Toch Ratana", url: siteUrl }],
   creator: "Toch Ratana",
   publisher: "Toch Ratana",
   openGraph: {
-    title: "Toch Ratana - Full Stack Developer",
-    description:
-      "Welcome to my personal portfolio — showcasing my web development projects, technical skills, and creative journey as a Full Stack Developer.",
-    url: "https://tochratana.com",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
     siteName: "Toch Ratana",
     images: [
       {
-        url: "https://tochratana.com/og-image.jpg",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Toch Ratana - Full Stack Developer Portfolio",
+        alt: "Toch Ratana - DevOps Engineer Portfolio",
       },
     ],
     locale: "en_US",
@@ -48,14 +54,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@tochratana",
     creator: "@tochratana",
-    title: "Toch Ratana - Full Stack Developer",
-    description:
-      "Full Stack Developer skilled in Next.js, Tailwind CSS, and Spring Boot. Visit my portfolio to explore projects and experiences.",
-    images: ["https://tochratana.com/og-image.jpg"],
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImage],
   },
-  metadataBase: new URL("https://tochratana.com"),
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "https://tochratana.com",
+    canonical: siteUrl,
+    languages: {
+      en: `${siteUrl}/en`,
+      km: `${siteUrl}/km`,
+    },
   },
 };
 
@@ -104,7 +113,7 @@ export default async function LocaleLayout({
                 "https://www.linkedin.com/in/tochratana",
                 "https://www.facebook.com/ratans",
               ],
-              jobTitle: "Full Stack Developer",
+              jobTitle: "DevOps Engineer",
               worksFor: {
                 "@type": "Organization",
                 name: "Toch Ratana Portfolio",

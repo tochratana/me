@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Toch Ratana - DevOps Engineer",
-    template: "%s | Toch Ratana",
-  },
+  title: "Toch Ratana - DevOps Engineer",
   description:
-    "Hi, I'm Toch Ratana — a passionate DevOps Engineer, Kubernets, Jenkins, GitOps, Docker, Nginx, Linux, Defactdojo, Argo CD, Terraform, Vault, Prometheus, Grafana, and cloud platforms. Explore my portfolio, projects, and coding journey from Cambodia.",
+    "Toch Ratana is a DevOps Engineer in Cambodia focused on Kubernetes, Jenkins, GitOps, Docker, Linux, Argo CD, Terraform, Vault, Prometheus, and Grafana.",
 };
 
 export default function RootLayout({
