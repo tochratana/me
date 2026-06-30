@@ -33,7 +33,6 @@ export default function Hero() {
       className="relative overflow-hidden bg-[var(--hero-bg)] px-4 py-16 text-[color:var(--hero-text)] transition-colors duration-300 sm:px-6 sm:py-20 lg:px-8"
     >
       <div className="absolute inset-0 bg-[image:var(--hero-gradient)] transition-colors duration-300" />
-      <div className="absolute inset-0 opacity-[0.14] [background-image:var(--hero-grid-image)] [background-size:56px_56px]" />
 
       <div
         className={`relative z-10 mx-auto flex min-h-[calc(100vh-13rem)] w-full max-w-7xl flex-col justify-center transition-all duration-700 ${
@@ -59,9 +58,9 @@ export default function Hero() {
             {t("hero.title")}
           </p>
 
-          <h1 className="text-4xl font-bold leading-[1.05] text-[color:var(--hero-text)] sm:text-5xl lg:text-7xl">
+          <h1 className="max-w-5xl text-4xl font-bold leading-[1.05] text-[color:var(--hero-text)] sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="block">{t("hero.greeting")}</span>
-            <span className="block text-[color:var(--hero-text-soft)]">
+            <span className="block max-w-4xl text-balance text-[color:var(--hero-text-soft)]">
               {t("hero.headline")}
             </span>
           </h1>

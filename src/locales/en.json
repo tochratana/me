@@ -10,11 +10,11 @@
   },
   "hero": {
     "greeting": "Toch Ratana",
-    "title": "DevOps & Cloud Engineer",
+    "title": "DevOps Engineering",
     "status": "Open to work",
     "location": "Phnom Penh, Cambodia",
-    "headline": "building reliable systems.",
-    "description": "I help teams ship with confidence by building cloud infrastructure, CI/CD pipelines, and monitoring that keep products online.",
+    "headline": "Building Reliable Infrastructure",
+    "description": "We help development teams release applications with confidence through cloud infrastructure, CI/CD pipelines, and monitoring that keeps applications running smoothly.",
     "supportingText": "My work connects infrastructure and development teams so releases are faster, safer, and easier to recover when something breaks.",
     "stats": {
       "projects": {
