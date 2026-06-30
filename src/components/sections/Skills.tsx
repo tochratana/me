@@ -3,7 +3,7 @@
 import { Server, Terminal } from "lucide-react";
 
 const skillsData = {
-  "Cloud & Infrastructure": [
+  "Cloud & IaC": [
     {
       name: "Google Cloud",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
