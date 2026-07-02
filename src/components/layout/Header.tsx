@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { ArrowUpRight, Menu, X, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
@@ -15,12 +17,19 @@ type NavigationItem = {
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useTranslation();
+  const params = useParams<{ locale?: string }>();
+  const pathname = usePathname();
+  const locale = params.locale === "km" ? "km" : "en";
+  const localePath = (path: string) =>
+    path === "/" ? `/${locale}` : `/${locale}${path}`;
 
   const navigation: NavigationItem[] = [
-    { name: t("header.home"), href: "#home" },
-    { name: t("header.about"), href: "#about" },
-    { name: t("header.skills"), href: "#skills" },
-    { name: t("header.contact"), href: "#contact" },
+    { name: t("header.home"), href: localePath("/") },
+    { name: t("header.about"), href: localePath("/about") },
+    // { name: t("header.skills"), href: localePath("/skills") },
+    { name: t("header.experience"), href: localePath("/experience") },
+    { name: t("header.projects"), href: localePath("/projects") },
+    // { name: t("header.contact"), href: localePath("/contact") },
     {
       name: "Blog",
       href: "#",
@@ -41,18 +50,38 @@ export default function Header() {
         <div className="hidden flex-1 items-center justify-center gap-4 lg:flex">
           {navigation.map((item) => {
             const Icon = item.icon;
+            const isActive =
+              !item.external &&
+              (pathname === item.href ||
+                (item.href !== `/${locale}` &&
+                  pathname?.startsWith(`${item.href}/`)));
+            const className = `inline-flex items-center justify-center gap-1 rounded rounded-5 px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)] ${
+              isActive
+                ? "bg-[var(--header-hover-bg)] text-[color:var(--header-hover-text)]"
+                : ""
+            }`;
 
-            return (
+            return item.external ? (
               <a
                 key={item.name}
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center justify-center gap-1 rounded rounded-5 px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)]"
+                className={className}
               >
                 <span>{item.name}</span>
                 {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
               </a>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={className}
+                aria-current={isActive ? "page" : undefined}
+              >
+                <span>{item.name}</span>
+                {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
+              </Link>
             );
           })}
         </div>
@@ -84,19 +113,40 @@ export default function Header() {
           <div className="flex flex-col gap-2">
             {navigation.map((item) => {
               const Icon = item.icon;
+              const isActive =
+                !item.external &&
+                (pathname === item.href ||
+                  (item.href !== `/${locale}` &&
+                    pathname?.startsWith(`${item.href}/`)));
+              const className = `inline-flex items-center gap-1 rounded-full px-4 py-3 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)] ${
+                isActive
+                  ? "bg-[var(--header-hover-bg)] text-[color:var(--header-hover-text)]"
+                  : ""
+              }`;
 
-              return (
+              return item.external ? (
                 <a
                   key={item.name}
                   href={item.href}
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-1 rounded-full px-4 py-3 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)]"
+                  className={className}
                   onClick={closeMenu}
                 >
                   <span>{item.name}</span>
                   {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
                 </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={className}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={closeMenu}
+                >
+                  <span>{item.name}</span>
+                  {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
+                </Link>
               );
             })}
             <div className="flex items-center gap-2">

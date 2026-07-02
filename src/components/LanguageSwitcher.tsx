@@ -1,6 +1,7 @@
 "use client";
 
 import { Languages } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
 type Locale = "en" | "km";
@@ -15,25 +16,25 @@ function persistLocale(locale: Locale) {
   document.documentElement.lang = locale;
 }
 
-function replaceUrlLocale(locale: Locale) {
-  const segments = window.location.pathname.split("/").filter(Boolean);
+function getLocalizedUrl(pathname: string, locale: Locale) {
+  const segments = pathname.split("/").filter(Boolean);
   const pathWithoutLocale = isLocale(segments[0])
     ? segments.slice(1)
     : segments;
   const restPath =
     pathWithoutLocale.length > 0 ? `/${pathWithoutLocale.join("/")}` : "";
-  const finalPath = `/${locale}${restPath}${window.location.search}${window.location.hash}`;
-
-  window.history.replaceState(window.history.state, "", finalPath);
+  return `/${locale}${restPath}${window.location.search}${window.location.hash}`;
 }
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const switchLanguage = (locale: Locale) => {
     persistLocale(locale);
-    replaceUrlLocale(locale);
     void i18n.changeLanguage(locale);
+    router.replace(getLocalizedUrl(pathname, locale), { scroll: false });
   };
 
   const currentLocale =

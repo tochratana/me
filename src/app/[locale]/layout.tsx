@@ -4,6 +4,7 @@ import { ThemeWrapper } from "@/components/theme/ThemeWrapper";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import { I18nProvider } from "@/components/I18nProvider";
+import { Footer } from "@/components/sections/Footer";
 
 const siteTitle = "Toch Ratana - DevOps Engineer";
 const siteDescription =
@@ -83,7 +84,7 @@ export default async function LocaleLayout({
   const lang = locale === "km" ? "km" : "en";
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* ✅ Google site verification */}
         <meta
@@ -141,6 +142,7 @@ export default async function LocaleLayout({
           <ThemeWrapper>
             <Header />
             {children}
+            <Footer />
           </ThemeWrapper>
           <GoogleAnalytics />
         </I18nProvider>
