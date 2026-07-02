@@ -26,10 +26,8 @@ export default function Header() {
   const navigation: NavigationItem[] = [
     { name: t("header.home"), href: localePath("/") },
     { name: t("header.about"), href: localePath("/about") },
-    // { name: t("header.skills"), href: localePath("/skills") },
     { name: t("header.experience"), href: localePath("/experience") },
     { name: t("header.projects"), href: localePath("/projects") },
-    // { name: t("header.contact"), href: localePath("/contact") },
     {
       name: "Blog",
       href: "#",
