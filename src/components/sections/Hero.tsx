@@ -41,8 +41,8 @@ export default function Hero() {
       >
         <div className="max-w-4xl">
           <div className="mb-6 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--hero-accent-soft)] px-3 py-1.5 text-sm font-semibold text-[color:var(--hero-accent)] ring-1 ring-[color:var(--hero-accent-border)]">
-              <span className="h-2 w-2 rounded-full bg-[var(--hero-accent-strong)]" />
+            <span className="inline-flex items-center gap-2 rounded-[8px] bg-[var(--hero-accent-soft)] px-3 py-1.5 text-sm font-semibold text-[color:var(--hero-accent)] ring-1 ring-[color:var(--hero-accent-border)]">
+              <span className="h-2 w-2 rounded-[8px] bg-[var(--hero-accent-strong)]" />
               {t("hero.status")}
             </span>
             <span className="inline-flex items-center gap-2 rounded-[8px] border border-[color:var(--hero-border)] bg-[var(--hero-surface)] px-3 py-1.5 text-sm font-medium text-[color:var(--hero-text-soft)]">

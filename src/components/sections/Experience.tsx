@@ -7,6 +7,19 @@ export default function Experience() {
     {
       company: "Endora",
       companyShort: "Endora",
+      position: "IT Professional",
+      duration: "6 mos",
+      period: "Jul 2025 - Present",
+      location: "Phnom Penh, Cambodia",
+      locationType: "On-site",
+      description:
+        "Endora is a developer-focused platform designed to generate and manage APIs efficiently. It helps developers quickly create RESTful APIs for different applications — reducing repetitive backend development work.",
+      technologies: ["React", "Next.js", "TypeScript", "Node.js", "API Design"],
+      gradient: "var(--gradient-experience-endora)",
+    },
+    {
+      company: "Endora",
+      companyShort: "Endora",
       position: "Full-Stack Developer",
       duration: "6 mos",
       period: "Jul 2025 - Present",
@@ -93,7 +106,9 @@ export default function Experience() {
                         </div>
                         <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
-                            <span><MapPin /></span>
+                            <span>
+                              <MapPin />
+                            </span>
                             <span>{exp.location}</span>
                           </span>
                           <span>•</span>
