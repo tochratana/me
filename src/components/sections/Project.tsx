@@ -2,6 +2,7 @@
 
 import { useTheme } from "@/components/theme/ThemeProvider";
 import { ExternalLink, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface Project {
   title: string;
@@ -60,16 +61,17 @@ const projects: Project[] = [
 
 export function Projects() {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <section id="projects" className="bg-[var(--site-page-bg)] px-4 py-20">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16 max-w-2xl">
-          <h2 className="mb-4 text-4xl font-bold text-[color:var(--site-text)] md:text-5xl">
-            Featured Projects
+        <div className="mb-16 max-w-3xl">
+          <h2 className="mb-6 text-4xl font-bold text-[color:var(--site-text)] md:text-5xl">
+            {t("projects.title")}<span style={{ color: "#6ee7b7" }}>{t("projects.titleHighlight")}</span>
           </h2>
-          <p className="text-lg text-[color:var(--site-muted-text)]">
-            A selection of my recent work
+          <p className="text-base leading-relaxed text-[color:var(--site-muted-text)] md:text-lg">
+            {t("projects.description")}
           </p>
         </div>
 

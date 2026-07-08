@@ -39,6 +39,7 @@
     "role": "DevOps & Cloud Engineer",
     "intro": "I focus on building reliable cloud systems, clean deployment workflows, and infrastructure that helps teams ship with confidence.",
     "description": "My background connects DevOps, backend development, and automation, so I enjoy turning complex setup work into simple, repeatable systems.",
+    "quote": "I build systems so teams can move faster without losing the confidence to recover when things go wrong.",
     "focus": {
       "cloud": "Cloud infrastructure",
       "automation": "CI/CD automation",
@@ -60,7 +61,9 @@
     "title": "Education"
   },
   "projects": {
-    "title": "Featured Projects",
+    "title": "I've been building a ",
+    "titleHighlight": "lot of things",
+    "description": "Come explore the fruits of my labor, from small experiments to full-blown web applications, each project showcases my love for coding and design.",
     "viewProject": "View Project",
     "liveDemo": "Live Demo"
   },

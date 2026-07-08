@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Facebook, Github, Linkedin, Mail } from "lucide-react";
+import { Facebook, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
@@ -8,16 +8,13 @@ import { useTranslation } from "react-i18next";
 export function Footer() {
   const { t } = useTranslation();
   const params = useParams<{ locale?: string }>();
-  const currentYear = new Date().getFullYear();
   const locale = params.locale === "km" ? "km" : "en";
   const localePath = (path: string) =>
     path === "/" ? `/${locale}` : `/${locale}${path}`;
 
   const footerLinks = [
-    { label: t("header.home"), href: localePath("/") },
     { label: t("header.about"), href: localePath("/about") },
     { label: t("header.skills"), href: localePath("/skills") },
-    { label: t("header.experience"), href: localePath("/experience") },
     { label: t("header.projects"), href: localePath("/projects") },
     { label: t("header.contact"), href: localePath("/contact") },
   ];
@@ -41,75 +38,49 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-[var(--site-page-bg)] px-4 py-10 text-[color:var(--site-text)]">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
-          <div>
-            <p className="text-2xl font-bold">Toch Ratana</p>
-            <p className="mt-2 text-sm font-semibold uppercase text-primary">
-              {t("footer.role")}
-            </p>
-            <p className="mt-4 max-w-md text-sm leading-6 text-[color:var(--site-muted-text)]">
-              {t("footer.description")}
-            </p>
+    <footer className="border-t border-[#2C2E33] bg-[#1A1B1E] px-4 py-4 text-[#C1C2C5]">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row md:gap-0">
+        
+        {/* Logo/Name */}
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#339AF0] text-sm font-bold text-white">
+            R
           </div>
+          <span className="text-lg font-bold text-white">Toch Ratana</span>
+        </div>
 
-          <nav
-            aria-label={t("footer.navigation")}
-            className="lg:justify-self-center"
-          >
-            <p className="mb-4 text-sm font-bold">{t("footer.navigation")}</p>
-            <div className="grid gap-3">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[color:var(--site-muted-text)] transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-
-          <div className="lg:justify-self-end">
-            <p className="mb-4 text-sm font-bold">{t("footer.connect")}</p>
-            <div className="flex gap-3">
-              {socialLinks.map((link) => {
-                const Icon = link.icon;
-
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] border border-[color:var(--site-card-border)] text-[color:var(--site-muted-text)] transition-colors hover:border-primary/40 hover:text-primary"
-                    aria-label={link.label}
-                  >
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </a>
-                );
-              })}
-            </div>
-
+        {/* Links */}
+        <nav className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
+          {footerLinks.map((link) => (
             <Link
-              href={localePath("/contact")}
-              className="mt-5 inline-flex items-center gap-2 rounded-[8px] bg-[var(--site-button-primary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-primary-text)] transition-colors hover:bg-[var(--site-button-primary-hover-bg)]"
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-white"
             >
-              <Mail className="h-4 w-4" aria-hidden="true" />
-              {t("footer.contactCta")}
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              {link.label}
             </Link>
-          </div>
+          ))}
+        </nav>
+
+        {/* Social Icons */}
+        <div className="flex items-center gap-3">
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2C2E33] text-[#C1C2C5] transition-colors hover:bg-[#3B3E45] hover:text-white"
+                aria-label={link.label}
+              >
+                <Icon className="h-4 w-4" aria-hidden="true" />
+              </a>
+            );
+          })}
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 text-sm text-[color:var(--site-muted-text)] sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {currentYear} Toch Ratana. {t("footer.rights")}.
-          </p>
-          <p>{t("footer.madeWith")}</p>
-        </div>
       </div>
     </footer>
   );
