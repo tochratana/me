@@ -96,8 +96,8 @@
   --hero-text: rgb(15 23 42);
   --hero-text-soft: rgb(51 65 85);
   --hero-text-muted: rgb(71 85 105);
-  --hero-accent: rgb(4 120 87);
-  --hero-accent-strong: rgb(5 150 105);
+  --hero-accent: #6ee7b7;
+  --hero-accent-strong: rgb(52 211 153);
   --hero-accent-soft: rgb(16 185 129 / 0.12);
   --hero-accent-border: rgb(16 185 129 / 0.25);
   --hero-surface: rgb(255 255 255 / 0.72);
@@ -150,7 +150,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #0a0a0f;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -181,15 +181,15 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-  --header-bg: rgb(12 12 12 / 0.9);
+  --header-bg: rgb(10 10 15 / 0.92);
   --header-border: rgb(255 255 255 / 0.14);
   --header-text: #ffffff;
   --header-hover-bg: rgb(255 255 255 / 0.08);
   --header-hover-text: #ffffff;
   --header-shadow: rgb(0 0 0 / 0.7);
   --header-highlight: rgb(255 255 255 / 0.08);
-  --hero-bg: #050605;
-  --hero-gradient: linear-gradient(115deg, #050605 0%, #10110d 52%, #071b15 100%);
+  --hero-bg: #0a0a0f;
+  --hero-gradient: linear-gradient(145deg, #0a0a0f 0%, #0d1117 30%, #0a1a14 60%, #0d1f18 80%, #0a0a0f 100%);
   --hero-grid-image: linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px);
   --hero-text: #ffffff;
   --hero-text-soft: rgb(212 212 216);
@@ -208,9 +208,9 @@
   --hero-secondary-button-bg: rgb(255 255 255 / 0.06);
   --hero-secondary-button-text: #ffffff;
   --hero-secondary-button-hover-bg: rgb(255 255 255 / 0.1);
-  --site-page-bg: #000000;
-  --site-card-bg: rgb(24 24 27);
-  --site-card-border: rgb(39 39 42);
+  --site-page-bg: #0a0a0f;
+  --site-card-bg: rgb(17 17 22);
+  --site-card-border: rgb(30 30 38);
   --site-text: #ffffff;
   --site-muted-text: rgb(156 163 175);
   --site-chip-bg: rgb(39 39 42);
@@ -231,7 +231,7 @@
   --site-logo-tile-bg: #ffffff;
   --site-image-overlay: rgb(0 0 0 / 0.4);
   --site-feature-shadow: rgb(0 0 0 / 0.35);
-  --dotted-bg: #000000;
+  --dotted-bg: #0a0a0f;
   --dotted-dot-color: rgb(255 255 255 / 0.15);
   --dotted-dot-rgb: 255, 255, 255;
 }

@@ -82,17 +82,17 @@ export function Projects() {
             return (
               <article
                 key={project.title}
-                className={`grid items-center gap-10 lg:gap-14 ${
+                className={`group grid items-center gap-10 lg:gap-14 ${
                   isReversed
                     ? "lg:grid-cols-[1.1fr_0.9fr]"
                     : "lg:grid-cols-[0.9fr_1.1fr]"
                 }`}
               >
                 <div className={isReversed ? "lg:order-2" : undefined}>
-                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--site-muted-text)]">
+                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#6ee7b7]">
                     Project {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] md:text-4xl">
+                  <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] transition-colors group-hover:text-[#6ee7b7] md:text-4xl">
                     {project.title}
                   </h3>
                   <p className="mb-6 max-w-xl text-base leading-7 text-[color:var(--site-muted-text)] md:text-lg">
@@ -103,7 +103,7 @@ export function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-[var(--site-chip-bg)] px-3 py-1 text-xs font-medium text-[color:var(--site-chip-text)]"
+                        className="rounded-full bg-[#6ee7b7]/10 border border-[#6ee7b7]/20 px-3 py-1 text-xs font-medium text-[#6ee7b7]"
                       >
                         {tag}
                       </span>
@@ -127,7 +127,7 @@ export function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md bg-[var(--site-button-primary-bg)] px-4 py-2 text-sm font-semibold text-[color:var(--site-button-primary-text)] transition-colors hover:bg-[var(--site-button-primary-hover-bg)]"
+                        className="inline-flex items-center gap-2 rounded-md bg-[#6ee7b7] px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-[#5dd4a8]"
                       >
                         <ExternalLink className="h-4 w-4" />
                         Live Demo
@@ -137,7 +137,7 @@ export function Projects() {
                 </div>
 
                 <div
-                  className={`relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)] ${
+                  className={`relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)] transition-all duration-300 group-hover:border-[#6ee7b7]/50 ${
                     isReversed ? "lg:order-1" : ""
                   }`}
                 >

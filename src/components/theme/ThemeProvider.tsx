@@ -4,7 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useState,
 } from "react";
 
@@ -19,7 +19,16 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = window.localStorage.getItem("theme") as Theme | null;
+      if (storedTheme) return storedTheme;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    return "light";
+  });
 
   const applyTheme = useCallback((nextTheme: Theme) => {
     document.documentElement.classList.remove("light", "dark");
@@ -28,14 +37,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(nextTheme);
   }, []);
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as Theme | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
-
-    applyTheme(storedTheme || systemTheme);
+  useLayoutEffect(() => {
+    // Prefer localStorage, then cookie, then system preference
+    const storedTheme = typeof window !== "undefined" ? localStorage.getItem("theme") as Theme | null : null;
+    const cookieMatch = typeof document !== "undefined" ? document.cookie.match(/(?:^|; )theme=([^;]*)/) : null;
+    const cookieTheme = cookieMatch ? decodeURIComponent(cookieMatch[1]) as Theme : null;
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const initial = storedTheme || cookieTheme || systemTheme;
+    applyTheme(initial);
   }, [applyTheme]);
 
   const toggleTheme = useCallback(() => {

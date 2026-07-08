@@ -30,9 +30,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[var(--hero-bg)] px-4 py-16 text-[color:var(--hero-text)] transition-colors duration-300 sm:px-6 sm:py-20 lg:px-8"
+      className="relative overflow-hidden px-4 py-16 text-[color:var(--hero-text)] transition-colors duration-300 sm:px-6 sm:py-20 lg:px-8"
     >
-      <div className="absolute inset-0 bg-[image:var(--hero-gradient)] transition-colors duration-300" />
+      <div className="absolute inset-0  transition-colors duration-300" />
 
       <div
         className={`relative z-10 mx-auto flex min-h-[calc(100vh-13rem)] w-full max-w-7xl flex-col justify-center transition-all duration-700 ${

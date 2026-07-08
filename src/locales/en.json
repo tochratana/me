@@ -6,6 +6,7 @@
     "experience": "Experience",
     "education": "Education",
     "projects": "Projects",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -145,6 +146,14 @@
     "contactCta": "Let's talk",
     "rights": "All rights reserved",
     "madeWith": "Made with care by Toch Ratana"
+  },
+  "blog": {
+    "titleStart": "All of my ",
+    "titleHighlight": "Technical Knowledge",
+    "titleEnd": " in one place",
+    "description": "I'm obsessed with writing bad code. I'm also obsessed with writing. Here, I write about my experiences with code and the things I've learned along the way.",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog"
   },
   "language": {
     "english": "Khmer",

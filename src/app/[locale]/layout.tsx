@@ -4,7 +4,7 @@ import { ThemeWrapper } from "@/components/theme/ThemeWrapper";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import { I18nProvider } from "@/components/I18nProvider";
-import { Footer } from "@/components/sections/Footer";
+import { Footer } from "@/components/layout/Footer";
 
 const siteTitle = "Toch Ratana - DevOps Engineer";
 const siteDescription =

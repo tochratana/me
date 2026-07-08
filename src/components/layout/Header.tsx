@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Menu, X, type LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams, usePathname } from "next/navigation";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import LanguageSwitcher from "../LanguageSwitcher";
@@ -24,15 +25,9 @@ export default function Header() {
     path === "/" ? `/${locale}` : `/${locale}${path}`;
 
   const navigation: NavigationItem[] = [
-    { name: t("header.home"), href: localePath("/") },
     { name: t("header.about"), href: localePath("/about") },
     { name: t("header.projects"), href: localePath("/projects") },
-    {
-      name: "Blog",
-      href: "#",
-      icon: ArrowUpRight,
-      external: true,
-    },
+    { name: t("header.blog") || "Blog", href: localePath("/blog") },
   ];
 
   const closeMenu = () => {
@@ -41,10 +36,19 @@ export default function Header() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded rounded-lg border border-[color:var(--header-border)] bg-[var(--header-bg)] px-4 py-2 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl">
-        <span className="hidden sm:inline cursor-pointer font-bold">NEXI</span>
+      <div className="mx-auto flex w-full md:w-fit items-center justify-between gap-4 md:gap-6 rounded-full border border-[color:var(--header-border)] bg-[var(--header-bg)] px-6 py-3 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+        <Link href={localePath("/")} className="flex items-center gap-2 pr-2 md:pr-4">
+          <Image
+            src="/project/ratana.jpg"
+            alt={t("hero.greeting") || "Toch Ratana"}
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          <span className="hidden sm:inline font-bold">{t("hero.greeting") || "Toch Ratana"}</span>
+        </Link>
 
-        <div className="hidden flex-1 items-center justify-center gap-4 lg:flex">
+        <div className="hidden items-center justify-center gap-2 lg:flex">
           {navigation.map((item) => {
             const Icon = item.icon;
             const isActive =
@@ -52,7 +56,7 @@ export default function Header() {
               (pathname === item.href ||
                 (item.href !== `/${locale}` &&
                   pathname?.startsWith(`${item.href}/`)));
-            const className = `inline-flex items-center justify-center gap-1 rounded rounded-5 px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)] ${
+            const className = `inline-flex items-center justify-center gap-1 rounded-full px-4 py-2 text-[length:var(--font-size-header)] font-semibold leading-[var(--line-height-header)] text-[color:var(--header-text)] transition-all duration-300 hover:scale-105 hover:bg-[var(--header-hover-bg)] hover:text-[color:var(--header-hover-text)] active:scale-95 ${
               isActive
                 ? "bg-[var(--header-hover-bg)] text-[color:var(--header-hover-text)]"
                 : ""

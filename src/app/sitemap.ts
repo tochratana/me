@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 const siteUrl = "https://tochratana.com";
 const locales = ["en", "km"] as const;
-const routes = ["", "/about", "/skills", "/projects", "/contact"];
+const routes = ["", "/about", "/skills", "/projects", "/blog", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
