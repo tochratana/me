@@ -159,20 +159,13 @@
           "year": 2024,
           "items": [
             {
-              "type": "university",
-              "title": "បរិញ្ញាបត្រវិទ្យាសាស្ត្រកុំព្យូទ័រ",
-              "organization": "សកលវិទ្យាល័យភូមិន្ទភ្នំពេញ",
-              "period": "២០២៤ – បច្ចុប្បន្ន",
-              "location": "ភ្នំពេញ កម្ពុជា",
-              "description": "កំពុងសិក្សាថ្នាក់បរិញ្ញាបត្រផ្នែកវិទ្យាសាស្ត្រកុំព្យូទ័រ ដោយផ្តោតលើវិស្វកម្មសូហ្វវែរ ក្បួនដោះស្រាយ និងការរចនាប្រព័ន្ធ។"
-            },
-            {
               "type": "short-course",
-              "title": "កម្មវិធីមូលដ្ឋាន",
-              "organization": "FluentFlow",
-              "period": "តុលា ២០២៤ – តុលា ២០២៥",
+              "title": "Samsung innovation campus",
+              "organization": "Coding & Programming by Python",
+              "school": "Royal of University Phnom Penh",
+              "period": "កុម្ភៈ ២០២៤ – ធ្នូ ២០២៤",
               "location": "ភ្នំពេញ កម្ពុជា",
-              "description": "បានរៀនពីមូលដ្ឋានគ្រឹះនៃការអភិវឌ្ឍន៍គេហទំព័រ និងបានបង្កើតគម្រោងជាច្រើន។",
+              "description": "សិក្សាអំពីការសរសេរកម្មវិធី Python, មូលដ្ឋានគ្រឹះ និងកម្រិតខ្ពស់ ព្រមទាំងអនុវត្តលើគម្រោងជាក់ស្តែង",
               "technologies": [
                 "React",
                 "Next.js",
@@ -182,26 +175,65 @@
               ],
               "projects": [
                 {
-                  "name": "JobSeek",
+                  "name": "Analysis",
                   "description": "កម្មវិធីគេហទំព័រស្វែងរកការងារទំនើបដែលបានរចនាឡើងដើម្បីភ្ជាប់អ្នកស្វែងរកការងារជាមួយនិយោជក។"
                 }
               ]
             },
             {
-              "type": "competition",
-              "title": "ការប្រកួតប្រជែងសរសេរកូដ",
-              "organization": "ព្រឹត្តិការណ៍សាលា",
-              "period": "មីនា ២០២៤",
+              "type": "short-course",
+              "title": "Foundation",
+              "organization": "Web Design",
+              "school": "ISTAD",
+              "period": "២២ វិច្ឆិកា ២០២៤ – ២២ មីនា ២០២៥, ចន្ទ-សុក្រ, ៤ ម៉ោងក្នុងមួយថ្ងៃ, ៤ ខែ",
               "location": "ភ្នំពេញ កម្ពុជា",
-              "description": "បានចូលរួមក្នុងការប្រកួតប្រជែងសរសេរកូដកម្រិតសាលា ការដោះស្រាយបញ្ហាក្បួនដោះស្រាយ និងការបង្កើតគម្រោងតូចៗ។"
+              "description": "មូលដ្ឋានគ្រឹះ Java និង OOP, ការភ្ជាប់ទិន្នន័យ, និង HTML, CSS 3, Bootstrap 5, Tailwind CSS, ការរចនា UX/UI, JavaScript, React.js",
+              "technologies": [
+                "Java Programming",
+                "Javascript",
+                "React JS",
+                "Bootstrap 5",
+                "HTML",
+                "Tailwind CSS",
+                "UX/UI Design"
+              ],
+              "projects": [
+                {
+                  "name": "FluentFlow",
+                  "description": "វេទិកាទំនើបសម្រាប់ជួយអ្នករៀនភាសាអង់គ្លេស និងគាំទ្រភាសាខ្មែរ។"
+                }
+              ]
+            },
+            {
+              "type": "short-course",
+              "title": "Pre-University",
+              "organization": "Web Design",
+              "school": "ISTAD",
+              "period": "១៥ កក្កដា ២០២៤ – ២៨ កញ្ញា ២០២៤, ចន្ទ-សុក្រ, ២ ម៉ោងក្នុងមួយថ្ងៃ, ៩០ ម៉ោង",
+              "location": "ភ្នំពេញ កម្ពុជា",
+              "description": "រចនាគេហទំព័រមូលដ្ឋាន និងអនុវត្តលើគម្រោងជាក់ស្តែង",
+              "technologies": [
+                "HTML",
+                "CSS",
+                "Javascript",
+                "Jquery",
+                "React JS",
+                "Fetch Api"
+              ],
+              "projects": [
+                {
+                  "name": "Service Listing",
+                  "description": "គម្រោងដែលជួយអ្នកប្រើប្រាស់ស្វែងរកហាងសម្រាប់ទិញទំនិញតាមអនឡាញ។"
+                }
+              ]
             },
             {
               "type": "university",
               "title": "បរិញ្ញាបត្រប្រព័ន្ធបច្ចេកវិទ្យាព័ត៌មាន",
               "organization": "វិទ្យាស្ថាន ស៊ីតិក",
-              "period": "២០២៣ – ២០២៤",
+              "period": "២០២៤ – ២០២៥",
               "location": "ភ្នំពេញ កម្ពុជា",
-              "description": "យើងបានរៀនពីមូលដ្ឋានគ្រឹះនៃការគ្រប់គ្រងព័ត៌មានវិទ្យា 1 ឆ្នាំ ហើយបន្ទាប់មកខ្ញុំបានប្តូរទៅរៀនថ្នាក់ថ្មីនៅឆ្នាំទី 2 ក្នុងឆ្នាំ 2025។"
+              "description": "យើងបានរៀនពីមូលដ្ឋានគ្រឹះនៃការគ្រប់គ្រងព័ត៌មានវិទ្យា ១ ឆ្នាំ ហើយបន្ទាប់មកខ្ញុំបានប្តូរទៅរៀនថ្នាក់ថ្មីនៅឆ្នាំទី ២ ក្នុងឆ្នាំ ២០២៥។"
             }
           ]
         },
