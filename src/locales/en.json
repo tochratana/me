@@ -47,7 +47,203 @@
       "reliability": "Reliable deployments"
     },
     "noteTitle": "Outside the terminal",
-    "note": "I recharge with movies and music, then bring that calmer, more creative mindset back into problem solving."
+    "note": "I recharge with movies and music, then bring that calmer, more creative mindset back into problem solving.",
+    "timeline": {
+      "heading": "My Journey",
+      "subheading": "A year-by-year look at what I've learned, built, and accomplished",
+      "types": {
+        "short-course": "Short Course",
+        "university": "University",
+        "school": "School",
+        "project": "Project",
+        "competition": "Competition",
+        "event": "Event",
+        "certificate": "Certificate",
+        "work": "Work"
+      },
+      "history": [
+        {
+          "year": 2026,
+          "items": [
+            {
+              "type": "short-course",
+              "title": "IT Professional",
+              "organization": "DevOps Engineering",
+              "period": "Nov 2025 – June 2026",
+              "location": "Phnom Penh, Cambodia",
+              "description": "We learn about devops and practice on real project",
+              "technologies": [
+                "React",
+                "Node.js",
+                "MongoDB",
+                "TailwindCSS"
+              ],
+              "certificate": "Certificate of Completion",
+              "projects": [
+                {
+                  "name": "Service Listing App",
+                  "description": "Built a platform to allow users to list and find local services."
+                }
+              ]
+            },
+            {
+              "type": "short-course",
+              "title": "Pre-University Program",
+              "organization": "Service Listing",
+              "period": "Dec 2025 – Jan 2026",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Service Listing is a platform that allows users to list and find services in their community.",
+              "technologies": [
+                "React",
+                "Node.js",
+                "MongoDB",
+                "TailwindCSS"
+              ],
+              "certificate": "Certificate of Completion",
+              "projects": [
+                {
+                  "name": "Service Listing App",
+                  "description": "Built a platform to allow users to list and find local services."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "items": [
+            {
+              "type": "work",
+              "title": "IT Professional",
+              "organization": "Endora",
+              "period": "Jul 2025 – Present",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Endora is a developer-focused platform designed to generate and manage APIs efficiently. It helps developers quickly create RESTful APIs for different applications — reducing repetitive backend development work.",
+              "technologies": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "API Design"
+              ]
+            },
+            {
+              "type": "short-course",
+              "title": "Full-Stack Developer",
+              "organization": "Endora",
+              "period": "Jul 2025 – Dec 2025",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Hands-on training in full-stack development covering frontend frameworks, backend services, and deployment workflows.",
+              "technologies": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "API Design"
+              ],
+              "certificate": "Endora Full-Stack Developer Certificate",
+              "projects": [
+                {
+                  "name": "Endora API Platform",
+                  "description": "Contributed to the API generation logic and frontend dashboard."
+                }
+              ]
+            },
+            {
+              "type": "event",
+              "title": "Tech Community Meetup",
+              "organization": "Cambodia Tech Community",
+              "period": "Sep 2025",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Participated in local tech meetups, networking with developers and learning about industry trends."
+            },
+            {
+              "type": "certificate",
+              "title": "Web Development Certificate",
+              "organization": "Online Platform",
+              "period": "Aug 2025",
+              "description": "Completed a comprehensive web development certification covering modern frameworks and best practices."
+            }
+          ]
+        },
+        {
+          "year": 2024,
+          "items": [
+            {
+              "type": "university",
+              "title": "Bachelor's in Computer Science",
+              "organization": "Royal University of Phnom Penh",
+              "period": "2024 – Present",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Pursuing a degree in Computer Science with focus on software engineering, algorithms, and system design."
+            },
+            {
+              "type": "short-course",
+              "title": "Foundation Program",
+              "organization": "FluentFlow",
+              "period": "Oct 2024 – Oct 2025",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Learned the foundations of web development and built multiple projects.",
+              "technologies": [
+                "React",
+                "Next.js",
+                "MongoDB",
+                "Express",
+                "REST APIs"
+              ],
+              "projects": [
+                {
+                  "name": "JobSeek",
+                  "description": "A modern job portal web application designed to connect job seekers with employers."
+                }
+              ]
+            },
+            {
+              "type": "school",
+              "title": "Graduated High School",
+              "organization": "High School",
+              "period": "2021 – 2024",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Completed Grade 10–12 with a focus on science track studies. Discovered passion for programming and technology."
+            },
+            {
+              "type": "competition",
+              "title": "Coding Competition",
+              "organization": "School Event",
+              "period": "Mar 2024",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Participated in a school-level coding competition, solving algorithmic challenges and building small projects."
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "items": [
+            {
+              "type": "school",
+              "title": "Completed Secondary School",
+              "organization": "Secondary School",
+              "period": "2018 – 2021",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Finished Grade 7–9. Deepened knowledge in sciences and mathematics. Started exploring basic computer skills and digital literacy."
+            }
+          ]
+        },
+        {
+          "year": 2018,
+          "items": [
+            {
+              "type": "school",
+              "title": "Completed Primary School",
+              "organization": "Primary School",
+              "period": "2012 – 2018",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Finished Grade 1–6. Built a strong foundation in math, science, and language arts. Developed early curiosity for technology."
+            }
+          ]
+        }
+      ]
+    }
   },
   "skills": {
     "title": "Technical Skills",
