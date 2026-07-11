@@ -352,11 +352,11 @@
         },
         "email": {
           "label": "អ៊ីមែល",
-          "placeholder": "your.email@example.com"
+          "placeholder": "youremail@email.com"
         },
         "message": {
           "label": "សារ",
-          "placeholder": "សូមប្រាប់ខ្ញុំអំពីឱកាសនេះ..."
+          "placeholder": "និយាយនូវអ្វីដែលអ្នកចង់និយាយមកកាន់ខ្ញុំ..."
         }
       },
       "submit": {

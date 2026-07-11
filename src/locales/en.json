@@ -247,7 +247,7 @@
               "organization": "High School",
               "period": "2021 – 2023",
               "location": "Phnom Penh, Cambodia",
-              "description": "Completed Grade 10–12 with a focus on science track studies. Discovered passion for programming and technology."
+              "description": "Completed Grade 10–12 with a focus on science track studies. Discovered passion for programming and technology. and after graduate I get grade A for BACII"
             }
           ]
         },
@@ -353,11 +353,11 @@
         },
         "email": {
           "label": "Email",
-          "placeholder": "your.email@example.com"
+          "placeholder": "youremail@email.com"
         },
         "message": {
           "label": "Message",
-          "placeholder": "Tell me about the opportunity..."
+          "placeholder": "Tell me about the something you want to talk with me..."
         }
       },
       "submit": {
