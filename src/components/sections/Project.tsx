@@ -20,28 +20,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "ENDORA",
-    description:
-      "Endora is an automated backend generateion platform designed to help developers and small businesses build APIs faster, easier and more efficienly",
-    image: {
-      light: "/project/endora-light.webp",
-      dark: "/project/endora-dark.webp",
-    },
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Tailwind",
-      "Spring Boot",
-      "MongoDB",
-      "Google Cloud",
-    ],
-    role: "Full-Stack Developer",
-    members: "5 Members",
-    github: "#",
-    live: "#",
-  },
-  {
     title: "AUTONOMOUS - A8S",
     description:
       "A cloud-native deployment platform focused on automating application deployment, CI/CD workflows, container orchestration, infrastructure management, scalability, monitoring, security, and DevOps automation using modern cloud-native technologies.",
@@ -56,12 +34,78 @@ const projects: Project[] = [
       "Tailwind",
       "Spring Boot",
       "MongoDB",
-      "Google Cloud",
+      "Google Cloud Platform",
     ],
-    role: "Lead DevOps Engineer",
-    members: "3 Members",
+    role: "DevOps Engineer",
+    members: "10 Members",
     github: "#",
-    live: "#",
+    live: "https://autonomous-istad.com",
+  },
+  {
+    title: "ENDORA",
+    description:
+      "Endora is an automated backend generateion platform designed to help developers and small businesses build APIs faster, easier and more efficienly",
+    image: {
+      light: "/project/endora-light.webp",
+      dark: "/project/endora-dark.webp",
+    },
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind",
+      "Spring Boot",
+      "MongoDB",
+      "Google Cloud Platform",
+    ],
+    role: "Full-Stack Developer",
+    members: "8 Members",
+    github: "#",
+    live: "https://www.endora.space",
+  },
+  {
+    title: "Fluentflow",
+    description:
+      "Practice your reading, writing, listening and speaking skills at your level.",
+    image: {
+      light: "/project/fluentflow-light.png",
+      dark: "/project/fluentflow-dark.png",
+    },
+    tags: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React JS",
+      "Tailwind CSS",
+      "Vercel",
+      "AOS library",
+    ],
+    role: "Frontend Design",
+    members: "6 Members",
+    github: "#",
+    live: "https://fluentflow.oudom.dev",
+  },
+  {
+    title: "CAM-HOTEL",
+    description:
+      "A modern platform for booking hotel, and room online for business.",
+    image: {
+      light: "/project/camhotel-light.png",
+      dark: "/project/camhotel-dark.png",
+    },
+    tags: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React JS",
+      "Tailwind CSS",
+      "Vercel",
+      "AOS library",
+    ],
+    role: "Full-Stack Developer",
+    members: "6 Members",
+    github: "#",
+    live: "https://camhotel-ui.tochratana.com",
   },
 ];
 
@@ -74,7 +118,10 @@ export function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 max-w-3xl">
           <h2 className="mb-6 text-4xl font-bold text-[color:var(--site-text)] md:text-5xl">
-            {t("projects.title")}<span style={{ color: "var(--hero-accent)" }}>{t("projects.titleHighlight")}</span>
+            {t("projects.title")}
+            <span style={{ color: "var(--hero-accent)" }}>
+              {t("projects.titleHighlight")}
+            </span>
           </h2>
           <p className="text-base leading-relaxed text-[color:var(--site-muted-text)] md:text-lg">
             {t("projects.description")}
@@ -108,14 +155,22 @@ export function Projects() {
                   <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base border-l-2 border-[var(--hero-accent)]/30 pl-4 py-1">
                     {project.role && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-[color:var(--site-text)]">Role</span>
-                        <span className="text-[color:var(--site-muted-text)]">{project.role}</span>
+                        <span className="font-semibold text-[color:var(--site-text)]">
+                          Role
+                        </span>
+                        <span className="text-[color:var(--site-muted-text)]">
+                          {project.role}
+                        </span>
                       </div>
                     )}
                     {project.members && (
                       <div className="flex flex-col">
-                        <span className="font-semibold text-[color:var(--site-text)]">Team</span>
-                        <span className="text-[color:var(--site-muted-text)]">{project.members}</span>
+                        <span className="font-semibold text-[color:var(--site-text)]">
+                          Team
+                        </span>
+                        <span className="text-[color:var(--site-muted-text)]">
+                          {project.members}
+                        </span>
                       </div>
                     )}
                   </div>
