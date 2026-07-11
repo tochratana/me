@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,12 +17,21 @@ type NavigationItem = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useTranslation();
   const params = useParams<{ locale?: string }>();
   const pathname = usePathname();
   const locale = params.locale === "km" ? "km" : "en";
   const localePath = (path: string) =>
     path === "/" ? `/${locale}` : `/${locale}${path}`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navigation: NavigationItem[] = [
     { name: t("header.about"), href: localePath("/about") },
@@ -36,7 +45,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-full px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex w-full md:w-fit items-center justify-between gap-4 md:gap-6 rounded-full border border-[color:var(--header-border)] bg-[var(--header-bg)] px-6 py-3 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+      <div className={`mx-auto flex w-full items-center justify-between gap-4 md:gap-6 rounded-full border border-[color:var(--header-border)] bg-[var(--header-bg)] px-6 py-3 text-[color:var(--header-text)] [box-shadow:0_22px_70px_-24px_var(--header-shadow),inset_0_1px_0_var(--header-highlight)] backdrop-blur-xl transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-xl hover:-translate-y-0.5 ${isScrolled ? "max-w-6xl" : "max-w-2xl"}`}>
         <Link href={localePath("/")} className="flex items-center gap-2 pr-2 md:pr-4">
           <Image
             src="/project/ratana.jpg"
