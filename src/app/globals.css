@@ -96,8 +96,9 @@
   --hero-text: rgb(15 23 42);
   --hero-text-soft: rgb(51 65 85);
   --hero-text-muted: rgb(71 85 105);
-  --hero-accent: #6ee7b7;
-  --hero-accent-strong: rgb(52 211 153);
+  --hero-accent: #2e5e4c;
+  --hero-accent-strong: #23483a;
+  --hero-accent-foreground: #ffffff;
   --hero-accent-soft: rgb(16 185 129 / 0.12);
   --hero-accent-border: rgb(16 185 129 / 0.25);
   --hero-surface: rgb(255 255 255 / 0.72);
@@ -196,6 +197,7 @@
   --hero-text-muted: rgb(161 161 170);
   --hero-accent: #6ee7b7;
   --hero-accent-strong: rgb(52 211 153);
+  --hero-accent-foreground: #000000;
   --hero-accent-soft: rgb(16 185 129 / 0.12);
   --hero-accent-border: rgb(52 211 153 / 0.2);
   --hero-surface: rgb(255 255 255 / 0.06);

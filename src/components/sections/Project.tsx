@@ -14,6 +14,8 @@ interface Project {
   tags: string[];
   github?: string;
   live?: string;
+  role?: string;
+  members?: string;
 }
 
 const projects: Project[] = [
@@ -34,6 +36,8 @@ const projects: Project[] = [
       "MongoDB",
       "Google Cloud",
     ],
+    role: "Full-Stack Developer",
+    members: "5 Members",
     github: "#",
     live: "#",
   },
@@ -54,6 +58,8 @@ const projects: Project[] = [
       "MongoDB",
       "Google Cloud",
     ],
+    role: "Lead DevOps Engineer",
+    members: "3 Members",
     github: "#",
     live: "#",
   },
@@ -68,7 +74,7 @@ export function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 max-w-3xl">
           <h2 className="mb-6 text-4xl font-bold text-[color:var(--site-text)] md:text-5xl">
-            {t("projects.title")}<span style={{ color: "#6ee7b7" }}>{t("projects.titleHighlight")}</span>
+            {t("projects.title")}<span style={{ color: "var(--hero-accent)" }}>{t("projects.titleHighlight")}</span>
           </h2>
           <p className="text-base leading-relaxed text-[color:var(--site-muted-text)] md:text-lg">
             {t("projects.description")}
@@ -89,21 +95,36 @@ export function Projects() {
                 }`}
               >
                 <div className={isReversed ? "lg:order-2" : undefined}>
-                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#6ee7b7]">
+                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--hero-accent)]">
                     Project {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] transition-colors group-hover:text-[#6ee7b7] md:text-4xl">
+                  <h3 className="mb-5 text-3xl font-extrabold text-[color:var(--site-text)] transition-colors group-hover:text-[var(--hero-accent)] md:text-4xl">
                     {project.title}
                   </h3>
-                  <p className="mb-6 max-w-xl text-base leading-7 text-[color:var(--site-muted-text)] md:text-lg">
+                  <p className="mb-4 max-w-xl text-base leading-7 text-[color:var(--site-muted-text)] md:text-lg">
                     {project.description}
                   </p>
+
+                  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base border-l-2 border-[var(--hero-accent)]/30 pl-4 py-1">
+                    {project.role && (
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-[color:var(--site-text)]">Role</span>
+                        <span className="text-[color:var(--site-muted-text)]">{project.role}</span>
+                      </div>
+                    )}
+                    {project.members && (
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-[color:var(--site-text)]">Team</span>
+                        <span className="text-[color:var(--site-muted-text)]">{project.members}</span>
+                      </div>
+                    )}
+                  </div>
 
                   <div className="mb-8 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-[#6ee7b7]/10 border border-[#6ee7b7]/20 px-3 py-1 text-xs font-medium text-[#6ee7b7]"
+                        className="rounded-full bg-[var(--hero-accent)]/10 border border-[var(--hero-accent)]/20 px-3 py-1 text-xs font-medium text-[var(--hero-accent)]"
                       >
                         {tag}
                       </span>
@@ -127,7 +148,7 @@ export function Projects() {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md bg-[#6ee7b7] px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-[#5dd4a8]"
+                        className="inline-flex items-center gap-2 rounded-md bg-[var(--hero-accent)] px-4 py-2 text-sm font-semibold text-[var(--hero-accent-foreground)] transition-colors hover:bg-[var(--hero-accent-strong)]"
                       >
                         <ExternalLink className="h-4 w-4" />
                         Live Demo
@@ -137,7 +158,7 @@ export function Projects() {
                 </div>
 
                 <div
-                  className={`relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)] transition-all duration-300 group-hover:border-[#6ee7b7]/50 ${
+                  className={`relative aspect-video overflow-hidden rounded-lg border border-[var(--site-card-border)] bg-[var(--site-card-bg)] shadow-[0_24px_80px_var(--site-feature-shadow)] transition-all duration-300 group-hover:border-[var(--hero-accent)]/50 ${
                     isReversed ? "lg:order-1" : ""
                   }`}
                 >

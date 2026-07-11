@@ -27,7 +27,7 @@ export default function About() {
           <div className="flex-1 space-y-6">
             <h2 className="text-4xl font-bold leading-tight md:text-5xl">
               Hey! I&apos;m{" "}
-              <span style={{ color: "#6ee7b7" }}>
+              <span style={{ color: "var(--hero-accent)" }}>
                 {t("hero.greeting") || "Toch Ratana"}
               </span>{" "}
               and I&apos;m a {t("about.role") || "DevOps & Cloud Engineer"}.

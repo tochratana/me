@@ -17,7 +17,7 @@ export function Blog() {
         <div className="mb-20 max-w-3xl">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl text-[color:var(--site-text)] leading-tight">
             {t("blog.titleStart") || "All of my "}{" "}
-            <span style={{ color: "#6ee7b7" }}>
+            <span style={{ color: "var(--hero-accent)" }}>
               {t("blog.titleHighlight") || "Technical Knowledge"}
             </span>{" "}
             {t("blog.titleEnd") || "in one place"}
@@ -35,7 +35,7 @@ export function Blog() {
                 <div className="mb-2 text-sm text-[color:var(--site-muted-text)]">
                   {post.date}
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-[color:var(--site-text)] group-hover:text-[#6ee7b7] transition-colors">
+                <h3 className="mb-4 text-2xl font-bold text-[color:var(--site-text)] group-hover:text-[var(--hero-accent)] transition-colors">
                   <Link href={`/${locale}/blog/${post.slug}`}>
                     {post.title}
                   </Link>
@@ -45,7 +45,7 @@ export function Blog() {
                 </p>
                 <Link
                   href={`/${locale}/blog/${post.slug}`}
-                  className="inline-block text-sm font-semibold text-[#6ee7b7] hover:underline"
+                  className="inline-block text-sm font-semibold text-[var(--hero-accent)] hover:underline"
                 >
                   {t("blog.readMore") || "Read More"}
                 </Link>

@@ -144,6 +144,14 @@
                   "description": "Endora is an automated backend generateion platform designed to help developers and small businesses build APIs faster, easier and more efficienly"
                 }
               ]
+            },
+            {
+              "type": "university",
+              "title": "Bachelor's in Management Information Technology",
+              "organization": "nstitute of Science and Technology Advanced Development",
+              "period": "២០២៥ – បច្ចុប្បន្ន",
+              "location": "Phnom Penh, Cambodia",
+              "description": "ខ្ញុំបានរៀនអ្វីៗជាច្រើន និងបច្ចេកវិទ្យា ហើយសាលានេះល្អសម្រាប់ខ្ញុំ ពីព្រោះវាផ្តោតលើការសរសេរកូដ និងការអភិវឌ្ឍន៍កម្មវិធី។"
             }
           ]
         },
@@ -186,12 +194,7 @@
               "period": "មីនា ២០២៤",
               "location": "ភ្នំពេញ កម្ពុជា",
               "description": "បានចូលរួមក្នុងការប្រកួតប្រជែងសរសេរកូដកម្រិតសាលា ការដោះស្រាយបញ្ហាក្បួនដោះស្រាយ និងការបង្កើតគម្រោងតូចៗ។"
-            }
-          ]
-        },
-        {
-          "year": 2023,
-          "items": [
+            },
             {
               "type": "university",
               "title": "បរិញ្ញាបត្រប្រព័ន្ធបច្ចេកវិទ្យាព័ត៌មាន",

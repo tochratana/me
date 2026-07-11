@@ -142,7 +142,7 @@ export function Contact() {
           <div className="space-y-8">
             <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Mail className="w-6 h-6 text-[#6ee7b7]" />
+                <Mail className="w-6 h-6 text-[var(--hero-accent)]" />
                 <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
                   {t("contact.details.title")}
                 </h2>
@@ -153,7 +153,7 @@ export function Contact() {
                   const Icon = detail.icon;
                   const content = (
                     <>
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] bg-[#6ee7b7] text-black">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] bg-[var(--hero-accent)] text-[var(--hero-accent-foreground)]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <span className="min-w-0">
@@ -190,7 +190,7 @@ export function Contact() {
             {/* Availability Card */}
             <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Calendar className="w-6 h-6 text-[#6ee7b7]" />
+                <Calendar className="w-6 h-6 text-[var(--hero-accent)]" />
                 <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
                   {t("contact.availability.title")}
                 </h2>
@@ -276,7 +276,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[#6ee7b7] focus:ring-2 focus:ring-[#6ee7b7]/20 transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[var(--hero-accent)] focus:ring-2 focus:ring-[var(--hero-accent)]/20 transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
                   placeholder={t("contact.form.fields.name.placeholder")}
                 />
               </div>
@@ -295,7 +295,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[#6ee7b7] focus:ring-2 focus:ring-[#6ee7b7]/20 transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[var(--hero-accent)] focus:ring-2 focus:ring-[var(--hero-accent)]/20 transition-all outline-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
                   placeholder={t("contact.form.fields.email.placeholder")}
                 />
               </div>
@@ -314,7 +314,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[#6ee7b7] focus:ring-2 focus:ring-[#6ee7b7]/20 transition-all outline-none resize-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
+                  className="w-full px-4 py-3 rounded-lg bg-[var(--site-field-bg)] border border-[color:var(--site-field-border)] focus:border-[var(--hero-accent)] focus:ring-2 focus:ring-[var(--hero-accent)]/20 transition-all outline-none resize-none text-[color:var(--site-text)] placeholder:text-[color:var(--site-field-placeholder)]"
                   placeholder={t("contact.form.fields.message.placeholder")}
                 />
               </div>
@@ -323,7 +323,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="flex-1 py-4 bg-[#6ee7b7] text-black rounded-lg font-medium hover:bg-[#5dd4a8] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="flex-1 py-4 bg-[var(--hero-accent)] text-[var(--hero-accent-foreground)] rounded-lg font-medium hover:bg-[#5dd4a8] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
                   {submitText}

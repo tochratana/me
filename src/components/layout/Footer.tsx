@@ -48,7 +48,7 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-[#6ee7b7] hover:text-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-colors hover:bg-[var(--hero-accent)] hover:text-[var(--hero-accent-foreground)]"
                 aria-label={link.label}
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />

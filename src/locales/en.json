@@ -144,6 +144,14 @@
                   "description": "Endora is an automated backend generateion platform designed to help developers and small businesses build APIs faster, easier and more efficienly"
                 }
               ]
+            },
+            {
+              "type": "university",
+              "title": "Bachelor's in Management Information Technology",
+              "organization": "nstitute of Science and Technology Advanced Development",
+              "period": "2025 – Present",
+              "location": "Phnom Penh, Cambodia",
+              "description": "I have learn a lot of thing and technology and this school is good for me becasuse it focus on coding and software development"
             }
           ]
         },
@@ -151,20 +159,13 @@
           "year": 2024,
           "items": [
             {
-              "type": "university",
-              "title": "Bachelor's in Computer Science",
-              "organization": "Royal University of Phnom Penh",
-              "period": "2024 – Present",
-              "location": "Phnom Penh, Cambodia",
-              "description": "Pursuing a degree in Computer Science with focus on software engineering, algorithms, and system design."
-            },
-            {
               "type": "short-course",
-              "title": "Foundation Program",
-              "organization": "FluentFlow",
-              "period": "Oct 2024 – Oct 2025",
+              "title": "Samsung innovation campus",
+              "organization": "Coding & Programming by Python",
+              "school": "Royal of University Phnom Penh",
+              "period": "Feb 2024 – Dec 2024",
               "location": "Phnom Penh, Cambodia",
-              "description": "Learned the foundations of web development and built multiple projects.",
+              "description": "Learn about python programming, basic, foundation and advance, and real project",
               "technologies": [
                 "React",
                 "Next.js",
@@ -174,29 +175,64 @@
               ],
               "projects": [
                 {
-                  "name": "JobSeek",
+                  "name": "Analysis",
                   "description": "A modern job portal web application designed to connect job seekers with employers."
                 }
               ]
             },
             {
-              "type": "competition",
-              "title": "Coding Competition",
-              "organization": "School Event",
-              "period": "Mar 2024",
+              "type": "short-course",
+              "title": "Foundation",
+              "organization": "Web Design",
+              "school": "ISTAD",
+              "period": "November, 22nd 2024– March, 22nd 2025, Mon-Fri, 4 hours per day, 4 months",
               "location": "Phnom Penh, Cambodia",
-              "description": "Participated in a school-level coding competition, solving algorithmic challenges and building small projects."
-            }
-          ]
-        },
-        {
-          "year": 2023,
-          "items": [
+              "description": "Fundamental Java and OOP concepts, Database Connectivity, and HTML, CSS 3, Bootstrap 5, Tailwind CSS, UX and UI Design, JavaScript, React.js",
+              "technologies": [
+                "Java Programming",
+                "Javascript",
+                "React JS",
+                "Bootstrap 5",
+                "HTML",
+                "Tailwind CSS",
+                "UX/UI Design"
+              ],
+
+              "projects": [
+                {
+                  "name": "FluentFlow",
+                  "description": "A modern platform for help khmer learner for learning English and support khmer language."
+                }
+              ]
+            },
+            {
+              "type": "short-course",
+              "title": "Pre-University",
+              "organization": "Web Design",
+              "school": "ISTAD",
+              "period": "July, 15th 2024– September, 28th 2024, Mon-Fri, 2 hours per day, 90 hours",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Basic Web Design with frontend and practice on project",
+              "technologies": [
+                "HTML",
+                "CSS",
+                "Javascript",
+                "Jquery",
+                "React JS",
+                "Fetch Api"
+              ],
+              "projects": [
+                {
+                  "name": "Service Listing",
+                  "description": "Is an project that help user to find thire shop for buy product vai online."
+                }
+              ]
+            },
             {
               "type": "university",
               "title": "Bachelor's in Management Information Technology",
               "organization": "SETECT INSTITUTE",
-              "period": "2023 – 2024",
+              "period": "2024 – 2025",
               "location": "Phnom Penh, Cambodia",
               "description": "We have learn about foundation of management information technology 1 year, and then after that I change to learn new scholl at year 2 in 2025."
             }
