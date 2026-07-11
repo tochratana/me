@@ -69,42 +69,52 @@
               "type": "short-course",
               "title": "IT Professional",
               "organization": "DevOps Engineering",
+              "school": "ISTAD",
               "period": "Nov 2025 – June 2026",
               "location": "Phnom Penh, Cambodia",
               "description": "We learn about devops and practice on real project",
               "technologies": [
-                "React",
-                "Node.js",
-                "MongoDB",
-                "TailwindCSS"
+                "Jenkins",
+                "Kunernetes",
+                "Argocd",
+                "GitOps",
+                "Git server",
+                "Ansible",
+                "Docker",
+                "Docker Compose",
+                "Prometheus",
+                "Grafana",
+                "Helm",
+                "Nexus OSS",
+                "Sonarqube",
+                "Trivy",
+                "Habor",
+                "Cloudflare",
+                "HashiCorp Vault"
               ],
               "certificate": "Certificate of Completion",
               "projects": [
                 {
-                  "name": "Service Listing App",
-                  "description": "Built a platform to allow users to list and find local services."
+                  "name": "Autonomous - A8S",
+                  "description": "A cloud-native deployment platform focused on automating application deployment, CI/CD workflows, container orchestration, infrastructure management, scalability, monitoring, security, and DevOps automation using modern cloud-native technologies."
                 }
               ]
             },
             {
-              "type": "short-course",
-              "title": "Pre-University Program",
-              "organization": "Service Listing",
-              "period": "Dec 2025 – Jan 2026",
+              "type": "project",
+              "title": "Cam-Hotel",
+              "organization": "Full-Stack",
+              "school": "ISTAD",
+              "period": "Apr 2026 – May 2026",
               "location": "Phnom Penh, Cambodia",
-              "description": "Service Listing is a platform that allows users to list and find services in their community.",
+              "description": "This project is about creating a system for booking rooms for accommodation, with admin, staff, and customer dashboards for managing rooms and booking directly.",
               "technologies": [
-                "React",
-                "Node.js",
-                "MongoDB",
-                "TailwindCSS"
-              ],
-              "certificate": "Certificate of Completion",
-              "projects": [
-                {
-                  "name": "Service Listing App",
-                  "description": "Built a platform to allow users to list and find local services."
-                }
+                "Spring Boot",
+                "Next.js",
+                "Shadcn UI",
+                "PostgreSql",
+                "Nginx",
+                "Google Cloud Plateform"
               ]
             }
           ]
@@ -113,56 +123,27 @@
           "year": 2025,
           "items": [
             {
-              "type": "work",
-              "title": "IT Professional",
-              "organization": "Endora",
-              "period": "Jul 2025 – Present",
-              "location": "Phnom Penh, Cambodia",
-              "description": "Endora is a developer-focused platform designed to generate and manage APIs efficiently. It helps developers quickly create RESTful APIs for different applications — reducing repetitive backend development work.",
-              "technologies": [
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Node.js",
-                "API Design"
-              ]
-            },
-            {
               "type": "short-course",
               "title": "Full-Stack Developer",
-              "organization": "Endora",
-              "period": "Jul 2025 – Dec 2025",
+              "organization": "Full-Stack",
+              "school": "ISTAD",
+              "period": "March 2025 – October 2025",
               "location": "Phnom Penh, Cambodia",
-              "description": "Hands-on training in full-stack development covering frontend frameworks, backend services, and deployment workflows.",
+              "description": "This courses we have learn about new technology for fullstack development and hand-on real project.",
               "technologies": [
-                "React",
+                "Spring Boot",
                 "Next.js",
                 "TypeScript",
-                "Node.js",
-                "API Design"
+                "PostgreSql",
+                "Deployment (GCP)"
               ],
-              "certificate": "Endora Full-Stack Developer Certificate",
+              "certificate": "Certificate of Completion",
               "projects": [
                 {
                   "name": "Endora API Platform",
-                  "description": "Contributed to the API generation logic and frontend dashboard."
+                  "description": "Endora is an automated backend generateion platform designed to help developers and small businesses build APIs faster, easier and more efficienly"
                 }
               ]
-            },
-            {
-              "type": "event",
-              "title": "Tech Community Meetup",
-              "organization": "Cambodia Tech Community",
-              "period": "Sep 2025",
-              "location": "Phnom Penh, Cambodia",
-              "description": "Participated in local tech meetups, networking with developers and learning about industry trends."
-            },
-            {
-              "type": "certificate",
-              "title": "Web Development Certificate",
-              "organization": "Online Platform",
-              "period": "Aug 2025",
-              "description": "Completed a comprehensive web development certification covering modern frameworks and best practices."
             }
           ]
         },
@@ -199,14 +180,6 @@
               ]
             },
             {
-              "type": "school",
-              "title": "Graduated High School",
-              "organization": "High School",
-              "period": "2021 – 2024",
-              "location": "Phnom Penh, Cambodia",
-              "description": "Completed Grade 10–12 with a focus on science track studies. Discovered passion for programming and technology."
-            },
-            {
               "type": "competition",
               "title": "Coding Competition",
               "organization": "School Event",
@@ -217,7 +190,33 @@
           ]
         },
         {
-          "year": 2021,
+          "year": 2023,
+          "items": [
+            {
+              "type": "university",
+              "title": "Bachelor's in Management Information Technology",
+              "organization": "SETECT INSTITUTE",
+              "period": "2023 – 2024",
+              "location": "Phnom Penh, Cambodia",
+              "description": "We have learn about foundation of management information technology 1 year, and then after that I change to learn new scholl at year 2 in 2025."
+            }
+          ]
+        },
+        {
+          "year": "2021-2023",
+          "items": [
+            {
+              "type": "school",
+              "title": "High School",
+              "organization": "High School",
+              "period": "2021 – 2023",
+              "location": "Phnom Penh, Cambodia",
+              "description": "Completed Grade 10–12 with a focus on science track studies. Discovered passion for programming and technology."
+            }
+          ]
+        },
+        {
+          "year": "2017-2020",
           "items": [
             {
               "type": "school",
@@ -230,7 +229,7 @@
           ]
         },
         {
-          "year": 2018,
+          "year": "2010-2016",
           "items": [
             {
               "type": "school",

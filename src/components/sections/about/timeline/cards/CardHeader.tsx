@@ -14,7 +14,7 @@ export function CardHeader({
       </h4>
 
       <p className="mt-0.5 text-sm font-medium text-foreground/70">
-        {item.organization}
+        {item.school ? `${item.organization} • ${item.school}` : item.organization}
       </p>
 
       {/* Period + Location */}

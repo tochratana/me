@@ -58,7 +58,8 @@ export function ShortCourseCard({
             {item.projects.map((proj, idx) => (
               <li key={idx} className="text-sm">
                 <span className="font-medium text-foreground">{proj.name}</span>
-                <p className="text-muted-foreground text-xs mt-0.5">{proj.description}</p>
+                {proj.role && <span className="text-foreground/70 text-xs ml-2 border border-foreground/20 rounded-md px-1.5 py-0.5">{proj.role}</span>}
+                <p className="text-muted-foreground text-xs mt-1">{proj.description}</p>
               </li>
             ))}
           </ul>

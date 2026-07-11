@@ -11,12 +11,14 @@ export type ActivityType =
 export interface TimelineProject {
   name: string;
   description: string;
+  role?: string;
 }
 
 export interface ActivityItem {
   type: ActivityType;
   title: string;
   organization: string;
+  school?: string;
   period: string;
   location?: string;
   description?: string;
@@ -26,6 +28,6 @@ export interface ActivityItem {
 }
 
 export interface YearGroup {
-  year: number;
+  year: string | number;
   items: ActivityItem[];
 }

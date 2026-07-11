@@ -45,7 +45,7 @@ export default function Header() {
             height={32}
             className="h-8 w-8 rounded-full object-cover"
           />
-          <span className="hidden sm:inline font-bold">{t("hero.greeting") || "Toch Ratana"}</span>
+          <span className="font-bold">{t("hero.greeting") || "Toch Ratana"}</span>
         </Link>
 
         <div className="hidden items-center justify-center gap-2 lg:flex">
