@@ -17,7 +17,10 @@ type NavigationItem = {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => {
+    if (typeof window !== "undefined") return window.scrollY > 20;
+    return false;
+  });
   const { t } = useTranslation();
   const params = useParams<{ locale?: string }>();
   const pathname = usePathname();
@@ -29,6 +32,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
