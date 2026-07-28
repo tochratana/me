@@ -122,7 +122,7 @@ export function Contact() {
   return (
     <div
       id="contact"
-      className="min-h-screen bg-[var(--site-page-bg)] py-20 px-4"
+      className="min-h-screen bg-[var(--site-page-bg)] px-4"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -139,8 +139,9 @@ export function Contact() {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="space-y-8">
-            <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
+          <div className="p-8 space-y-8">
+            {/* Contact Details */}
+            <div>
               <div className="flex items-center gap-3 mb-6">
                 <Mail className="w-6 h-6 text-[var(--hero-accent)]" />
                 <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
@@ -187,8 +188,11 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Availability Card */}
-            <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
+            {/* Divider */}
+            <div className="border-t border-[color:var(--site-card-border)]" />
+
+            {/* Availability */}
+            <div>
               <div className="flex items-center gap-3 mb-6">
                 <Calendar className="w-6 h-6 text-[var(--hero-accent)]" />
                 <h2 className="text-2xl font-bold text-[color:var(--site-text)]">
@@ -251,7 +255,7 @@ export function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-[var(--site-card-bg)] border border-[color:var(--site-card-border)] rounded-lg p-8">
+          <div className="p-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[color:var(--site-text)]">
                 {t("contact.form.title")}

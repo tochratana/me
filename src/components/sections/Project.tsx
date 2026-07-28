@@ -39,7 +39,7 @@ const projects: Project[] = [
     role: "DevOps Engineer",
     members: "10 Members",
     github: "#",
-    live: "https://autonomous-istad.com",
+    live: "https://a8s.tochratana.com",
   },
   {
     title: "ENDORA",

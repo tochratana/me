@@ -281,6 +281,8 @@
   },
   "skills": {
     "title": "ជំនាញបច្ចេកទេស",
+    "heading": "ជំនាញ និង បច្ចេកវិទ្យា",
+    "description": "ការសាងសង់ និង ស្វ័យប្រវត្តិកម្មហេដ្ឋារចនាសម្ព័ន្ធដែលអាចធ្វើមាត្រដ្ឋានបានជាមួយ DevOps ទំនើប",
     "frontend": "ផ្នែកមុខ",
     "backend": "ផ្នែកក្រោយ",
     "tools": "ឧបករណ៍ និង វេទិកា"
@@ -326,10 +328,10 @@
     },
     "availability": {
       "title": "ភាពរួចរាល់",
-      "statusLabel": "ស្ថានភាពស្វែងរកការងារ",
-      "statusValue": "កំពុងស្វែងរកយ៉ាងសកម្ម",
-      "availableFromLabel": "អាចចាប់ផ្តើមពី",
-      "availableFromValue": "ភ្លាមៗ",
+      "statusLabel": "ស្ថានភាពបច្ចុប្បន្ន",
+      "statusValue": "មានការងារ · បើកទទួល Freelance",
+      "availableFromLabel": "ពេលទំនេរ Freelance",
+      "availableFromValue": "ចុងសប្តាហ៍ និង បន្ទាប់ពីម៉ោងធ្វើការ",
       "preferredRolesLabel": "តួនាទីដែលចង់បាន",
       "roles": {
         "devops": "DevOps Engineer",

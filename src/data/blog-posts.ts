@@ -14,6 +14,38 @@ export interface BlogPost {
  */
 export const blogPosts: BlogPost[] = [
   {
+    title: "Infrac K3s — Automated K3s Cluster Setup with One Command",
+    date: "July 28, 2026",
+    slug: "infrac-k3s-automated-cluster-setup",
+    image: "/blog/k3s-cluster-setup.jpg",
+    description:
+      "Every time I needed a fresh Kubernetes environment I had to repeat the same manual steps. So I built Infrac K3s — one command, full cluster ready. K3s + Helm + Ingress-Nginx + ArgoCD + cert-manager, all automated with Ansible.",
+    content: `Every time I wanted a fresh Kubernetes environment — for testing, for a new project, for learning — I had to repeat the same manual steps. Install K3s, install Helm, set up Ingress, configure ArgoCD… It was exhausting.
+
+So I built Infrac K3s: one command, full cluster ready.
+
+K3s is a lightweight, production-grade Kubernetes distribution by Rancher. It's the same real Kubernetes — just packaged into a single binary and designed to be simple to install. Unlike full Kubernetes (kubeadm), K3s installs with a single curl command, runs on as little as 512MB of RAM, and is perfect for VMs, edge devices, or local dev machines.
+
+With just one command — just install — the automation sets up the entire stack: K3s as the Kubernetes engine, Helm as the package manager, Ingress-Nginx to route external traffic into the cluster, ArgoCD for GitOps-based auto-deployment from your Git repository, Kubernetes Dashboard as a visual web UI, and cert-manager to handle SSL certificates automatically via Let's Encrypt.
+
+One of the design decisions I'm most proud of is the dual-mode support. You set a single variable in your config — k3s_install_mode: "standalone" for a single-server dev or test environment, or k3s_install_mode: "ha" for a 3-node production-grade cluster with embedded etcd. Standalone is perfect when you're learning or experimenting on a single VM. HA spreads across three master nodes — if one dies, the cluster survives.
+
+I also added Vagrant support for people who don't have a VPS. With a simple Vagrantfile, you can spin up a local Ubuntu VM with 2GB of RAM, run just install against it, and have a fully working Kubernetes cluster on your laptop — no cloud account needed. This turned out to be one of the most-appreciated features for people learning DevOps.
+
+Getting started is intentionally minimal. Clone the repo, install the dependencies (Python pip and just), edit inventory/hosts.ini with your server IP, and run just install. The Ansible playbook takes care of everything else.
+
+The reason I chose Ansible as the automation layer is its agentless design — no software needs to be installed on your target servers. It connects via SSH, runs its tasks idempotently, and leaves. You can run the same playbook ten times and get the same result every time. Playbooks are plain YAML that reads almost like English, which makes them easy to review, audit, and modify.
+
+Building this project taught me a lot about how Kubernetes networking actually works — following a request from the Ingress controller down through Services and into Pods. I got hands-on with GitOps using ArgoCD, treating Git as the single source of truth for all deployments. I learned how cert-manager integrates with Let's Encrypt to provision and rotate TLS certificates automatically. And I gained a much deeper appreciation for writing reusable Ansible roles.
+
+What's next? I'm planning to add Prometheus and Grafana for cluster monitoring, Longhorn for distributed persistent storage, and a full written guide for setting up the HA mode on real 3-node VPS infrastructure.
+
+The repo is open source at github.com/tochratana/infra-k3s. If this helped you, drop a star. And if you're learning DevOps — K3s combined with Ansible is one of the best hands-on Kubernetes experiences you can get without the complexity or cost of a full cloud setup.
+
+Happy shipping! 🚀`,
+  },
+
+  {
     title: "Building a Production-Ready CI/CD Pipeline with Jenkins and ArgoCD",
     date: "June 15, 2026",
     slug: "cicd-pipeline-jenkins-argocd",

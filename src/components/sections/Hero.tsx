@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="absolute inset-0  transition-colors duration-300" />
 
       <div
-        className={`relative z-10 mx-auto flex min-h-[calc(100vh-13rem)] w-full max-w-7xl flex-col justify-center transition-all duration-700 ${
+        className={`relative z-10 mx-auto flex min-h-[calc(100vh-13rem)] w-full max-w-6xl flex-col justify-center transition-all duration-700 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
         }`}
       >

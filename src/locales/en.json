@@ -282,6 +282,8 @@
   },
   "skills": {
     "title": "Technical Skills",
+    "heading": "Skills & Technologies",
+    "description": "Building and automating scalable infrastructure with modern DevOps practices",
     "frontend": "Frontend",
     "backend": "Backend",
     "tools": "Tools & Platforms"
@@ -327,10 +329,10 @@
     },
     "availability": {
       "title": "Availability",
-      "statusLabel": "Job Search Status",
-      "statusValue": "Actively Looking",
-      "availableFromLabel": "Available From",
-      "availableFromValue": "Immediately",
+      "statusLabel": "Current Status",
+      "statusValue": "Employed · Open to Freelance",
+      "availableFromLabel": "Freelance Availability",
+      "availableFromValue": "Weekends & After Hours",
       "preferredRolesLabel": "Preferred Roles",
       "roles": {
         "devops": "DevOps Engineer",
